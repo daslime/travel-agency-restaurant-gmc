@@ -1,0 +1,458 @@
+:root {
+    --primary-color: #e67817; /* Sunset orange */
+    --accent-color: #8b4513; /* Safari brown */
+    --text-accent: #c17f59; /* Earth tone */
+  }
+
+  .hero-section {
+    height: 100vh;
+    background-color: #000;
+  }
+
+  .hero-slide {
+    height: 100vh;
+    transition: all 0.3s ease;
+  }
+
+  .letter-spacing-2 {
+    letter-spacing: 2px;
+  }
+
+  .carousel-item {
+    transition: transform 1.2s ease-in-out;
+  }
+
+  .carousel-fade .carousel-item {
+    opacity: 0;
+    transition-duration: 0.9s;
+    transition-property: opacity;
+  }
+
+  .carousel-fade .carousel-item.active {
+    opacity: 1;
+  }
+
+  .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+
+  .btn-primary:hover {
+    background-color: #d86700;
+    border-color: #d86700;
+  }
+
+  .price-badge {
+    background: rgba(230, 120, 23, 0.9);
+    backdrop-filter: blur(5px);
+  }
+
+  .card-img-top {
+    height: 250px;
+    object-fit: cover;
+  }
+
+  /* Enhanced card animations */
+  .card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Enhanced button hover effects */
+  .btn {
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Floating animation for hero text */
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .hero-text {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Progress bar for scroll */
+  .scroll-progress {
+    height: 3px;
+    background: var(--primary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+  }
+
+  /* Enhanced navbar on scroll */
+  .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+  }
+
+  /* Image overlay effect */
+  .card-img-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .card:hover .card-img-overlay {
+    opacity: 1;
+  }
+
+  .bg-soft-primary {
+    background-color: rgba(230, 120, 23, 0.1);
+  }
+  .bg-soft-success {
+    background-color: rgba(25, 135, 84, 0.1);
+  }
+  .bg-soft-info {
+    background-color: rgba(13, 202, 240, 0.1);
+  }
+  .bg-gradient {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  }
+
+  .animate__bounce {
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      height: auto;
+      min-height: 100vh;
+    }
+  }
+
+  /* Underline effect for non-dropdown links */
+  .nav-link:not(.dropdown-toggle)::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  /* Hover and active states for non-dropdown links */
+  .nav-link:not(.dropdown-toggle):hover::after,
+  .nav-link:not(.dropdown-toggle).active::after {
+    width: 80%;
+  }
+
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+      position: absolute;
+      top: 100%;
+      left: 1rem;
+      right: 1rem;
+      background: white;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .tribal-animate {
+    animation: tribalFloat 3s ease-in-out infinite;
+  }
+
+  @keyframes tribalFloat {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Hover effects for cards */
+  .card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .weather-widget .dropdown-menu {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .error-state {
+    opacity: 0.7;
+  }
+
+  .uv-index {
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+  }
+
+  .weather-widget .dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .weather-widget .dropdown-menu::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+  }
+
+  /* Weather Widget Enhancements */
+  .weather-widget {
+    transition: all 0.3s ease;
+  }
+
+  .weather-widget .current-weather-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .weather-widget .weather-icon-large {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 2.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .weather-widget .weather-icon-small {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+
+  /* Modern Weather Theme Classes */
+  .weather-sunny .current-weather-icon i {
+    color: var(--bs-warning);
+    text-shadow: 0 0 15px rgba(255, 193, 7, 0.4);
+  }
+
+  .weather-cloudy .current-weather-icon i {
+    color: var(--bs-secondary);
+    text-shadow: 0 0 15px rgba(108, 117, 125, 0.4);
+  }
+
+  .weather-rainy .current-weather-icon i {
+    color: var(--bs-info);
+    text-shadow: 0 0 15px rgba(13, 202, 240, 0.4);
+  }
+
+  .weather-stormy .current-weather-icon i {
+    color: var(--bs-indigo);
+    text-shadow: 0 0 15px rgba(102, 16, 242, 0.4);
+  }
+
+  .weather-widget .dropdown-menu {
+    animation: fadeIn 0.2s ease-in-out;
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 1rem;
+  }
+
+  .weather-widget .dropdown-menu .bg-light {
+    background-color: var(--bs-light) !important;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+  }
+
+  .weather-widget .dropdown-menu .bg-light:hover {
+    background-color: var(--bs-gray-100) !important;
+    transform: translateY(-2px);
+  }
+
+  .weather-widget .weather-icon-small i {
+    transition: all 0.3s ease;
+  }
+
+  .weather-widget .weather-icon-small:hover i {
+    transform: scale(1.1);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Temperature Display */
+  #current-temp {
+    font-family: var(--bs-font-monospace);
+    letter-spacing: -0.5px;
+  }
+
+  /* Condition Text */
+  #current-condition {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    text-transform: capitalize;
+  }
+
+  /* Divider Line */
+  .weather-widget .vr {
+    height: 20px;
+    opacity: 0.2;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .weather-widget {
+      display: none;
+    }
+  }
+
+  .weather-widget .dropdown-menu {
+    min-width: 200px;
+  }
+
+  .weather-widget i {
+    font-size: 1.2rem;
+  }
+
+  #current-temp {
+    font-size: 1.1rem;
+  }
+
+  /* Only keeping essential styles that can't be replicated with Bootstrap */
+  .nav-link:not(.dropdown-toggle)::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  .nav-link:not(.dropdown-toggle):hover::after,
+  .nav-link:not(.dropdown-toggle).active::after {
+    width: 80%;
+  }
+
+  .transition-all {
+    transition: all 0.3s ease;
+  }
+
+  .opacity-10 {
+    opacity: 0.1;
+  }
+
+  .form-floating > .form-control:focus,
+  .form-floating > .form-select:focus {
+    border-color: #e67817;
+    box-shadow: 0 0 0 0.25rem rgba(230, 120, 23, 0.25);
+  }
+
+  .hero-section {
+    height: 100vh;
+    background-color: #000;
+  }
+
+  .letter-spacing-2 {
+    letter-spacing: 2px;
+  }
+
+  /* Enhanced button hover effects */
+  .btn {
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Stats hover effect */
+  .display-6 {
+    transition: all 0.3s ease;
+  }
+
+  .display-6:hover {
+    color: #ff8c00;
+    transform: scale(1.1);
+  }
+
+  /* Badge hover effects */
+  .badge {
+    transition: all 0.3s ease;
+  }
+
+  .badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      height: auto;
+      min-height: 100vh;
+    }
+  }
+
+  /* Enhance text readability */
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
