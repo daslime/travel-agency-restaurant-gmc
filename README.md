@@ -98,24 +98,62 @@ Your contributions make open source magical! Here's how to add your touch:
 🚀 Push to branch (git push origin feature/AmazingFeature)
 🎉 Open a Pull Request
 
-🎨 Portfolio & Contact
+## 🎨 Portfolio & Contact
+
 <div align="center">
-Show Image
-Show Image
-Show Image
-Show Image
+
+[![Portfolio](https://img.shields.io/badge/Tech_Portfolio-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://surgetech.netlify.app)
+[![Professional Portfolio](https://img.shields.io/badge/Professional_Portfolio-4A90E2?style=for-the-badge&logo=About.me&logoColor=white)](https://surge1024.netlify.app)
+[![Design Portfolio](https://img.shields.io/badge/Design_Portfolio-FF6B6B?style=for-the-badge&logo=About.me&logoColor=white)](https://surgedesign.netlify.app)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:brianmutugdev@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/surge-brian-mutugi)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/daslime)
+
 </div>
-📈 Project Stats
+
+## 📈 Project Stats
+
 <div align="center">
-Show Image
-Show Image
-Show Image
+
+[![GitHub Stars](https://img.shields.io/github/stars/daslime/travel-agency-restaurant-gmc?style=for-the-badge&logo=github&labelColor=black&color=gold)](https://github.com/daslime/travel-agency-restaurant-gmc/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/daslime/travel-agency-restaurant-gmc?style=for-the-badge&logo=github&labelColor=black&color=teal)](https://github.com/daslime/travel-agency-restaurant-gmc/network/members)
+[![GitHub Issues](https://img.shields.io/github/issues/daslime/travel-agency-restaurant-gmc?style=for-the-badge&logo=github&labelColor=black&color=red)](https://github.com/daslime/travel-agency-restaurant-gmc/issues)
+[![Project Views](https://komarev.com/ghpvc/?username=daslime&label=Profile%20views&color=0e75b6&style=flat)](https://github.com/daslime)
+
 </div>
-📄 License
-Released under the MIT License. See LICENSE for more information.
+## 📄 License & Attribution
+
 <div align="center">
-Crafted with 💖 by Surge Brian Mutugi
-<br>
-Show Image
+ 
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+</div>
+
+<div align="center">
+ <img src="https://avatars.githubusercontent.com/u/130851416?v=4" width="150px" style="border-radius: 50%; box-shadow: 0 0 20px rgba(0,0,0,0.15);" alt="Surge Brian Mutugi"/>
+ 
+ <h3>Crafted with 💖 by <a href="https://github.com/daslime">Surge Brian Mutugi</a></h3>
+ 
+ [![GitHub](https://img.shields.io/github/followers/daslime?label=Follow&style=social)](https://github.com/daslime)
+ [![Twitter](https://img.shields.io/twitter/follow/surgecoder?style=social)](https://twitter.com/surgecoder)
+ 
+ <sub>Released under the [MIT License](LICENSE)</sub>
+ 
+ <br/>
+ 
+ [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=2E8B57&center=true&vCenter=true&width=435&lines=Full+Stack+Developer;UI%2FUX+Designer;Tech+Enthusiast)](https://github.com/daslime)
+ 
+ <br/>
+ 
+ <a href="https://github.com/daslime" target="_blank">
+   <img src="https://github-profile-trophy.vercel.app/?username=daslime&theme=nord&column=4&margin-w=15&margin-h=15&no-bg=true" alt="Github Trophies" />
+ </a>
+ 
+</div>
+
+---
+
+<div align="center">
+ <sub>If you found this project helpful, please consider giving it a ⭐</sub>
 </div>
 ```
