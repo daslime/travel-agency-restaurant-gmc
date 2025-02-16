@@ -1,0 +1,2943 @@
+<!DOCTYPE html>
+git <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kenya Yetu - Discover wild Kenya</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Modern Enhanced Navigation -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light fixed-top bg-white bg-opacity-75"
+      style="backdrop-filter: blur(10px)">
+      <div class="container-fluid px-lg-4">
+        <!-- Left Side: Brand and Weather -->
+        <div class="d-flex align-items-center ms-lg-4">
+          <!-- Brand -->
+          <a
+            class="navbar-brand d-flex align-items-center gap-2 gap-sm-3"
+            href="#">
+            <div class="brand-logo">
+              <img
+                src="kenya-yetu-logo.jpg"
+                alt="Kenya Yetu Logo"
+                class="rounded-circle shadow-sm d-sm-block"
+                style="height: 35px; width: 35px" />
+            </div>
+            <div class="brand-text">
+              <h1 class="h5 h4-sm mb-0 fw-bold">
+                <span class="text-dark">KE</span><span
+                  class="text-danger">NYA</span>
+                <span class="text-success">YE</span><span
+                  class="text-danger">TU</span>
+              </h1>
+              <span class="small text-muted d-none d-sm-inline">Discover Wild
+                Kenya</span>
+            </div>
+          </a>
+
+          <!-- Weather Widget -->
+          <div class="weather-widget d-none d-lg-flex align-items-center ms-4">
+            <div class="dropdown">
+              <button
+                class="btn btn-light rounded-pill shadow-sm d-flex align-items-center px-3 py-2"
+                type="button"
+                id="weatherDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <div class="d-flex align-items-center">
+                  <span class="current-weather-icon me-2">
+                    <i class="fas fa-circle-notch fa-spin text-primary"></i>
+                  </span>
+                  <span id="current-temp" class="fw-bold">--°C</span>
+                  <div class="vr mx-2 opacity-25"></div>
+                  <span class="text-muted small">Nairobi</span>
+                </div>
+              </button>
+
+              <!-- Enhanced Dropdown Content -->
+              <div
+                class="dropdown-menu p-3 shadow-lg border-0"
+                style="width: 300px">
+                <div class="text-center mb-3">
+                  <div class="weather-icon-large mb-2">
+                    <i
+                      class="fas fa-circle-notch fa-spin fa-2x text-primary"></i>
+                  </div>
+                  <h6 class="fw-bold mb-0" id="weather-desc">Loading...</h6>
+                  <span class="text-muted small" id="current-location">Nairobi,
+                    Kenya</span>
+                </div>
+
+                <!-- Weather Details Grid -->
+                <div class="row g-3">
+                  <div class="col-6">
+                    <div class="p-3 rounded-3 bg-light">
+                      <div class="d-flex align-items-center">
+                        <div class="weather-icon-small me-2">
+                          <i class="fas fa-temperature-high text-danger"></i>
+                        </div>
+                        <div>
+                          <span
+                            class="d-block text-muted small">Temperature</span>
+                          <span class="fw-bold"
+                            id="current-temp-details">--°C</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="p-3 rounded-3 bg-light">
+                      <div class="d-flex align-items-center">
+                        <div class="weather-icon-small me-2">
+                          <i class="fas fa-tint text-primary"></i>
+                        </div>
+                        <div>
+                          <span class="d-block text-muted small">Humidity</span>
+                          <span class="fw-bold" id="weather-humidity">--%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="p-3 rounded-3 bg-light">
+                      <div class="d-flex align-items-center">
+                        <div class="weather-icon-small me-2">
+                          <i class="fas fa-wind text-info"></i>
+                        </div>
+                        <div>
+                          <span class="d-block text-muted small">Wind
+                            Speed</span>
+                          <span class="fw-bold" id="weather-wind">-- km/h</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="p-3 rounded-3 bg-light">
+                      <div class="d-flex align-items-center">
+                        <div class="weather-icon-small me-2">
+                          <i class="fas fa-compass text-success"></i>
+                        </div>
+                        <div>
+                          <span class="d-block text-muted small">Wind Dir</span>
+                          <span class="fw-bold" id="wind-direction">--</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Update Time -->
+                <div class="mt-3 pt-2 border-top">
+                  <div
+                    class="d-flex justify-content-between align-items-center text-muted small">
+                    <span>Last Updated</span>
+                    <span id="weather-time" class="fw-medium">--:--</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Navigation and Search -->
+        <div class="d-flex align-items-center me-lg-4">
+          <!-- Mobile Toggles -->
+          <div class="d-flex align-items-center gap-3 d-lg-none">
+            <!-- Search Toggle -->
+            <button
+              class="btn btn-link text-dark p-1"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#searchCollapse">
+              <i class="fas fa-search fs-5"></i>
+            </button>
+            <!-- Menu Toggle -->
+            <button
+              class="navbar-toggler border-0 p-0"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarContent">
+              <i class="fas fa-bars text-primary fs-5"></i>
+            </button>
+          </div>
+
+          <!-- Collapsible Navigation Content -->
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <!-- Mobile Search -->
+            <div class="collapse d-lg-none mb-3" id="searchCollapse">
+              <form class="d-flex">
+                <div class="input-group">
+                  <input
+                    type="search"
+                    class="form-control"
+                    placeholder="Search destinations..." />
+                  <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active position-relative fw-medium"
+                  href="#home">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle fw-medium"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown">
+                  Safaris
+                </a>
+                <ul class="dropdown-menu border-0 shadow-sm rounded-3">
+                  <li>
+                    <a class="dropdown-item py-2" href="#destinations">
+                      <i class="fas fa-paw me-2 text-primary"></i>
+                      Masai Mara
+                      <span class="badge bg-danger ms-2">Popular</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item py-2" href="#tours">
+                      <i class="fas fa-mountain me-2 text-primary"></i>
+                      Amboseli
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item py-2" href="#tours">
+                      <i class="fas fa-tree me-2 text-primary"></i>
+                      Diani
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link position-relative fw-medium"
+                  href="#tours">Experiences</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link position-relative fw-medium"
+                  href="#contact">Contact</a>
+              </li>
+            </ul>
+
+            <!-- Desktop Search -->
+            <form class="d-none d-lg-flex me-3">
+              <div class="input-group">
+                <input
+                  type="search"
+                  class="form-control rounded-start"
+                  placeholder="Search destinations..." />
+                <button class="btn btn-primary rounded-end" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </form>
+
+            <!-- Book Now Button -->
+            <a
+              href="#book"
+              class="btn btn-primary rounded-pill px-3 px-lg-4 mt-3 mt-lg-0 shadow-sm transition-all">
+              <i class="fas fa-calendar-check me-2"></i>
+              <span class="d-none d-sm-inline">Book Now</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Enhanced Hero Section -->
+    <section
+      id="home"
+      class="hero-section position-relative overflow-hidden"
+      style="
+        background: linear-gradient(rgba(0, 0, 0, 0.795), rgba(0, 0, 0, 0.151)),
+          url('1738536569778.jpg') center/cover no-repeat;
+      ">
+      <!-- Hero Content -->
+      <div
+        class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-8 text-center">
+              <!-- Pre-title -->
+              <div class="mb-4" data-aos="fade-down">
+                <span class="badge bg-warning px-3 py-2 rounded-pill fs-6">
+                  <i class="fas fa-compass me-2"></i>Welcome to Kenya
+                </span>
+              </div>
+
+              <!-- Main Title -->
+              <h1
+                class="display-3 fw-bold text-white mb-4"
+                data-aos="fade-up"
+                style="font-family: 'Playfair Display', serif">
+                Discover the Magic of
+                <span
+                  class="d-block"
+                  style="font-family: 'Dancing Script', cursive; color: #ff8c00">African
+                  Safari</span>
+              </h1>
+
+              <!-- Subtitle -->
+              <p
+                class="lead text-white mb-4 fw-light"
+                data-aos="fade-up"
+                data-aos-delay="100"
+                style="font-family: 'Poppins', sans-serif">
+                Experience breathtaking wildlife encounters and unforgettable
+                adventures
+              </p>
+
+              <!-- Feature Badges -->
+              <div
+                class="d-flex flex-wrap justify-content-center gap-2 mb-5"
+                data-aos="fade-up"
+                data-aos-delay="200">
+                <span class="badge bg-white bg-opacity-25 px-3 py-2">
+                  <i class="fas fa-paw text-warning me-2"></i>Wildlife Safari
+                </span>
+                <span class="badge bg-white bg-opacity-25 px-3 py-2">
+                  <i class="fas fa-mountain text-warning me-2"></i>Adventure
+                  Tours
+                </span>
+                <span class="badge bg-white bg-opacity-25 px-3 py-2">
+                  <i class="fas fa-users text-warning me-2"></i>Cultural
+                  Experience
+                </span>
+              </div>
+
+              <!-- CTA Buttons -->
+              <div
+                class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-5"
+                data-aos="fade-up"
+                data-aos-delay="300">
+                <a
+                  href="#tours"
+                  class="btn btn-warning btn-lg px-4 py-3 rounded-pill">
+                  <i class="fas fa-compass me-2"></i>Explore Tours
+                </a>
+                <a
+                  href="#contact"
+                  class="btn btn-outline-light btn-lg px-4 py-3 rounded-pill">
+                  <i class="fas fa-paper-plane me-2"></i>Contact Us
+                </a>
+              </div>
+
+              <!-- Stats -->
+              <div
+                class="row g-4 justify-content-center"
+                data-aos="fade-up"
+                data-aos-delay="400">
+                <div class="col-auto">
+                  <div class="d-flex align-items-center text-white">
+                    <div class="display-6 fw-bold me-2">10+</div>
+                    <div class="text-start small lh-sm">
+                      Years<br />Experience
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="vr bg-white mx-4 h-100"></div>
+                </div>
+                <div class="col-auto">
+                  <div class="d-flex align-items-center text-white">
+                    <div class="display-6 fw-bold me-2">50+</div>
+                    <div class="text-start small lh-sm">
+                      Unique<br />Destinations
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="vr bg-white mx-4 h-100"></div>
+                </div>
+                <div class="col-auto">
+                  <div class="d-flex align-items-center text-white">
+                    <div class="display-6 fw-bold me-2">1000+</div>
+                    <div class="text-start small lh-sm">
+                      Happy<br />Travelers
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div
+        class="position-absolute bottom-0 start-50 translate-middle-x mb-4 d-none d-lg-block"
+        data-aos="fade-up"
+        data-aos-delay="500">
+        <div class="text-white text-center">
+          <small class="d-block mb-2 text-uppercase letter-spacing-2">Scroll
+            Down</small>
+          <i
+            class="fas fa-chevron-down fa-lg animate__animated animate__bounce animate__infinite"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enhanced Destinations Section with Image Placeholders for Tribal Decorations -->
+    <section
+      id="destinations"
+      class="py-5 bg-white position-relative overflow-hidden">
+      <!-- Full Section Background Pattern -->
+      <div
+        class="position-absolute top-0 start-0 w-100 h-100"
+        style="z-index: 0">
+        <svg width="100%" height="100%" preserveAspectRatio="none">
+          <defs>
+            <!-- Main Diagonal Stripe Pattern -->
+            <pattern
+              id="mainStripePattern"
+              x="0"
+              y="0"
+              width="60"
+              height="60"
+              patternUnits="userSpaceOnUse"
+              patternTransform="rotate(45)">
+              <!-- Base stripes -->
+              <rect width="30" height="60" fill="#FF8C00" />
+              <rect x="30" width="30" height="60" fill="#FFA500" />
+            </pattern>
+
+            <!-- Overlay Pattern for Texture -->
+            <pattern
+              id="overlayPattern"
+              x="0"
+              y="0"
+              width="120"
+              height="120"
+              patternUnits="userSpaceOnUse"
+              patternTransform="rotate(45)">
+              <!-- Tribal accents -->
+              <path d="M60 0l30 30l-30 30l-30-30z" fill="white" opacity="0.2" />
+              <path
+                d="M60 60l30 30l-30 30l-30-30z"
+                fill="#FFB833"
+                opacity="0.1" />
+            </pattern>
+          </defs>
+
+          <!-- Background Layers -->
+          <rect width="100%" height="100%" fill="url(#mainStripePattern)" />
+          <rect width="100%" height="100%" fill="url(#overlayPattern)" />
+        </svg>
+      </div>
+
+      <!-- Content Container with Higher z-index -->
+      <div class="container py-4 position-relative" style="z-index: 1">
+        <!-- Section Header with Tribal Elements -->
+        <div class="text-center mb-5">
+          <h2
+            class="display-5 fw-bold mb-2 text-white"
+            style="font-family: 'Playfair Display', serif">
+            Popular Safari Destinations
+          </h2>
+          <p
+            class="text-white-50 mb-0"
+            style="font-family: 'Poppins', sans-serif">
+            Discover Kenya's most breathtaking wildlife experiences
+          </p>
+
+          <!-- Tribal Divider -->
+          <div
+            class="d-flex align-items-center justify-content-center my-4"></div>
+        </div>
+
+        <!-- Cards Container with Background Pattern -->
+        <div class="row g-4 position-relative">
+          <!-- Masai Mara Card -->
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 border-0 shadow-sm overflow-hidden">
+              <div class="position-relative">
+                <img
+                  src="1738537230004.jpg"
+                  class="card-img-top"
+                  alt="Masai Mara" />
+                <div
+                  class="card-img-overlay d-flex flex-column justify-content-end">
+                  <div class="text-white p-3 bg-gradient">
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-2">
+                      <span class="badge bg-danger">Most Popular</span>
+                      <span class="price-badge px-3 py-2 rounded-pill">From Ksh
+                        25,000</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3">
+                  <h5 class="card-title mb-0">Masai Mara Safari</h5>
+                  <div class="rating text-warning">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <small class="text-muted ms-2">4.5/5</small>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <span class="badge bg-soft-primary text-primary me-2">Big
+                    Five</span>
+                  <span
+                    class="badge bg-soft-success text-success me-2">Migration</span>
+                  <span class="badge bg-soft-info text-info">Cultural</span>
+                </div>
+                <p class="card-text">
+                  Experience the world-famous wildebeest migration and encounter
+                  the Big Five in their natural habitat.
+                </p>
+                <div class="border-top pt-3">
+                  <div class="row text-center g-3">
+                    <div class="col-4">
+                      <i class="fas fa-clock text-primary mb-2"></i>
+                      <p class="small text-muted mb-0">3-7 Days</p>
+                    </div>
+                    <div class="col-4">
+                      <i class="fas fa-users text-primary mb-2"></i>
+                      <p class="small text-muted mb-0">Max 8 People</p>
+                    </div>
+                    <div class="col-4">
+                      <i class="fas fa-hotel text-primary mb-2"></i>
+                      <p class="small text-muted mb-0">Luxury Lodge</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer bg-white border-0 pt-0">
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary" type="button">
+                    Book Now <i class="fas fa-arrow-right ms-2"></i>
+                  </button>
+                  <button
+                    class="btn btn-outline-primary"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#tourDetails">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Amboseli Card -->
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 border-0 shadow-sm overflow-hidden">
+              <div class="position-relative">
+                <img
+                  src="1738537722300.jpg"
+                  class="card-img-top"
+                  alt="Amboseli" />
+                <div
+                  class="card-img-overlay d-flex flex-column justify-content-end">
+                  <div class="text-white p-3 bg-gradient">
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-2">
+                      <span class="badge bg-success">Best Value</span>
+                      <span class="price-badge px-3 py-2 rounded-pill">From Ksh
+                        20,000</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3">
+                  <h5 class="card-title mb-0">Amboseli National Park</h5>
+                  <div class="rating text-warning">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <small class="text-muted ms-2">4.0/5</small>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <span
+                    class="badge bg-soft-primary text-primary me-2">Elephants</span>
+                  <span class="badge bg-soft-success text-success me-2">Mt.
+                    Kilimanjaro</span>
+                  <span class="badge bg-soft-info text-info">Photography</span>
+                </div>
+                <p class="card-text">
+                  Watch majestic elephants roam with Mt. Kilimanjaro as your
+                  backdrop in this iconic park.
+                </p>
+                <div class="border-top pt-3">
+                  <div class="row text-center g-3">
+                    <div class="col-4">
+                      <i class="fas fa-clock text-primary mb-2"></i>
+                      <p class="small text-muted mb-0">2-5 Days</p>
+                    </div>
+                    <div class="col-4">
+                      <i class="fas fa-users text-primary mb-2"></i>
+                      <p class="small text-muted mb-0">Max 6 People</p>
+                    </div>
+                    <div class="col-4">
+                      <i class="fas fa-campground text-primary mb-2"></i>
+                      <p class="small text-muted mb-0">Tented Camp</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer bg-white border-0 pt-0">
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary" type="button">
+                    Book Now <i class="fas fa-arrow-right ms-2"></i>
+                  </button>
+                  <button
+                    class="btn btn-outline-primary"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#tourDetails">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Diani Beach Card -->
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card h-100 border-0 shadow-sm overflow-hidden">
+              <div class="position-relative">
+                <img src="1738538166431.jpg" class="card-img-top" alt="Diani" />
+                <div
+                  class="card-img-overlay d-flex flex-column justify-content-end">
+                  <div class="text-white p-3 bg-gradient">
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-2">
+                      <span class="badge bg-warning">New</span>
+                      <span class="price-badge px-3 py-2 rounded-pill">From Ksh
+                        18,000</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3">
+                  <h5 class="card-title mb-0">Diani Beach</h5>
+                  <div class="rating text-warning">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <small class="text-muted ms-2">4.0/5</small>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <span
+                    class="badge bg-soft-primary text-primary me-2">Beach</span>
+                  <span
+                    class="badge bg-soft-success text-success me-2">Crystal-Clear
+                    Waters</span>
+                  <span class="badge bg-soft-info text-info">Snorkeling</span>
+                </div>
+                <p class="card-text">
+                  Enjoy pristine white sandy beaches and crystal-clear waters.
+                </p>
+                <div class="border-top pt-3">
+                  <div class="row text-center g-3">
+                    <div class="col-4">
+                      <i class="fas fa-clock text-primary mb-2"></i>
+                      <p class="small text-muted mb-0">2-5 Days</p>
+                    </div>
+                    <div class="col-4">
+                      <i class="fas fa-users text-primary mb-2"></i>
+                      <p class="small text-muted mb-0">Max 6 People</p>
+                    </div>
+                    <div class="col-4">
+                      <i class="fas fa-water text-primary mb-2"></i>
+                      <p class="small text-muted mb-0">Snorkeling</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer bg-white border-0 pt-0">
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary" type="button">
+                    Book Now <i class="fas fa-arrow-right ms-2"></i>
+                  </button>
+                  <button
+                    class="btn btn-outline-primary"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#tourDetails">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tours Section -->
+    <!-- Safari Packages Section -->
+    <section id="tours" class="py-5 bg-white">
+      <div class="container">
+        <!-- Enhanced Section Header with Safari Theme -->
+        <div class="text-center mb-5">
+          <!-- Decorative Safari Elements -->
+          <div class="d-flex align-items-center justify-content-center mb-4">
+            <span
+              class="border-top border-2 border-primary w-25 d-none d-md-block"></span>
+            <div class="mx-4 position-relative">
+              <span
+                class="badge bg-warning px-4 py-2 rounded-pill text-uppercase letter-spacing-2">
+                <i class="fas fa-paw me-2"></i>Wild Adventures
+              </span>
+            </div>
+            <span
+              class="border-top border-2 border-primary w-25 d-none d-md-block"></span>
+          </div>
+
+          <!-- Main Title with Animation -->
+          <h2
+            class="display-4 fw-bold mb-3"
+            data-aos="fade-up"
+            style="font-family: 'Playfair Display', serif">
+            <span
+              class="text-primary"
+              style="font-family: 'Playfair Display', serif">Discover</span>
+            Your Perfect
+            <span
+              class="d-block"
+              style="font-family: 'Dancing Script', cursive; color: #ff8c00">Safari
+              Experience</span>
+          </h2>
+
+          <!-- Enhanced Subtitle -->
+          <p
+            class="lead text-muted mb-5"
+            data-aos="fade-up"
+            data-aos-delay="100">
+            From the majestic Masai Mara to the peaks of Mount Kenya,
+            <br class="d-none d-md-block" />
+            embark on a journey of a lifetime
+          </p>
+
+          <!-- Experience Badges -->
+          <div
+            class="d-flex flex-wrap justify-content-center gap-3 mb-5"
+            data-aos="fade-up"
+            data-aos-delay="200">
+            <span class="badge bg-soft-primary text-primary px-4 py-2">
+              <i class="fas fa-camera me-2"></i>Wildlife Photography
+            </span>
+            <span class="badge bg-soft-success text-success px-4 py-2">
+              <i class="fas fa-campground me-2"></i>Luxury Camping
+            </span>
+            <span class="badge bg-soft-info text-info px-4 py-2">
+              <i class="fas fa-users me-2"></i>Cultural Experiences
+            </span>
+            <span class="badge bg-soft-warning text-warning px-4 py-2">
+              <i class="fas fa-map-marked-alt me-2"></i>Guided Adventures
+            </span>
+          </div>
+
+          <!-- Package Filter Buttons  Styling -->
+          <div
+            class="d-flex flex-wrap justify-content-center gap-3 mb-5"
+            data-aos="fade-up"
+            data-aos-delay="300">
+            <button
+              class="btn btn-outline-primary rounded-pill px-4 py-2 active">
+              <i class="fas fa-globe-africa me-2"></i>All Safaris
+            </button>
+            <button class="btn btn-outline-primary rounded-pill px-4 py-2">
+              <i class="fas fa-paw me-2"></i>Wildlife Tours
+            </button>
+            <button class="btn btn-outline-primary rounded-pill px-4 py-2">
+              <i class="fas fa-mountain me-2"></i>Adventure Treks
+            </button>
+            <button class="btn btn-outline-primary rounded-pill px-4 py-2">
+              <i class="fas fa-umbrella-beach me-2"></i>Beach & Safari
+            </button>
+          </div>
+        </div>
+
+        <!-- Safari Packages Accordion -->
+        <div
+          class="accordion shadow-lg rounded-4 overflow-hidden"
+          id="safariAccordion">
+          <!-- Masai Mara Package -->
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button fw-semibold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#masaiMara">
+                <div class="d-flex align-items-center flex-grow-1">
+                  <i class="fas fa-paw text-primary me-3 fs-4"></i>
+                  <div
+                    class="d-flex justify-content-between align-items-center w-100">
+                    <span>Big Five Safari Experience - 7 Days</span>
+                    <div class="badges ms-3">
+                      <span class="badge bg-danger">Most Popular</span>
+                      <span class="badge bg-success ms-2">Available</span>
+                    </div>
+                  </div>
+                </div>
+              </button>
+            </h2>
+            <div
+              id="masaiMara"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#safariAccordion">
+              <div class="accordion-body bg-white">
+                <div class="row g-4">
+                  <!-- Image Gallery -->
+                  <div class="col-lg-6">
+                    <div class="position-relative rounded-4 overflow-hidden">
+                      <div
+                        id="masaiMaraCarousel"
+                        class="carousel slide"
+                        data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img
+                              src="1738537230004.jpg"
+                              class="d-block w-100 object-fit-cover"
+                              style="height: 300px"
+                              alt="Masai Mara" />
+                          </div>
+                          <div class="carousel-item">
+                            <img
+                              src="1738564478339.jpg"
+                              class="d-block w-100 object-fit-cover"
+                              style="height: 300px"
+                              alt="Wildlife" />
+                          </div>
+                        </div>
+                        <button
+                          class="carousel-control-prev"
+                          type="button"
+                          data-bs-target="#masaiMaraCarousel"
+                          data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button
+                          class="carousel-control-next"
+                          type="button"
+                          data-bs-target="#masaiMaraCarousel"
+                          data-bs-slide="next">
+                          <span class="carousel-control-next-icon"></span>
+                        </button>
+                      </div>
+                      <div
+                        class="position-absolute bottom-0 start-0 p-3 bg-dark bg-opacity-75 text-white w-100">
+                        <div
+                          class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            Masai Mara, Kenya
+                          </div>
+                          <div>
+                            <i class="fas fa-calendar-alt me-2"></i>
+                            Available Year Round
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Package Details -->
+                  <div class="col-lg-6">
+                    <div class="d-flex flex-column h-100">
+                      <h5 class="mb-3">Package Highlights</h5>
+                      <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span
+                          class="badge bg-primary bg-opacity-10 text-primary">
+                          <i class="fas fa-camera me-1"></i> Big Five
+                        </span>
+                        <span
+                          class="badge bg-success bg-opacity-10 text-success">
+                          <i class="fas fa-home me-1"></i> Luxury Lodge
+                        </span>
+                        <span class="badge bg-info bg-opacity-10 text-info">
+                          <i class="fas fa-users me-1"></i> Cultural Visit
+                        </span>
+                      </div>
+
+                      <!-- Itinerary Tabs -->
+                      <ul class="nav nav-tabs mb-3" role="tablist">
+                        <li class="nav-item">
+                          <button
+                            class="nav-link active"
+                            data-bs-toggle="tab"
+                            data-bs-target="#overview">
+                            Overview
+                          </button>
+                        </li>
+                        <li class="nav-item">
+                          <button
+                            class="nav-link"
+                            data-bs-toggle="tab"
+                            data-bs-target="#itinerary">
+                            Itinerary
+                          </button>
+                        </li>
+                        <li class="nav-item">
+                          <button
+                            class="nav-link"
+                            data-bs-toggle="tab"
+                            data-bs-target="#includes">
+                            Includes
+                          </button>
+                        </li>
+                      </ul>
+
+                      <div class="tab-content flex-grow-1">
+                        <div class="tab-pane fade show active" id="overview">
+                          <ul class="list-unstyled mb-4">
+                            <li class="mb-2">
+                              <i
+                                class="fas fa-check-circle text-success me-2"></i>
+                              Daily game drives with professional guides
+                            </li>
+                            <li class="mb-2">
+                              <i
+                                class="fas fa-check-circle text-success me-2"></i>
+                              Luxury lodge accommodation with full board
+                            </li>
+                            <li class="mb-2">
+                              <i
+                                class="fas fa-check-circle text-success me-2"></i>
+                              Cultural visits to authentic Maasai villages
+                            </li>
+                            <li class="mb-2">
+                              <i
+                                class="fas fa-check-circle text-success me-2"></i>
+                              Hot air balloon safari option available
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="tab-pane fade" id="itinerary">
+                          <div class="small">
+                            <div class="mb-2">
+                              <strong>Day 1-2:</strong> Arrival & Masai Mara
+                              Game Drives
+                            </div>
+                            <div class="mb-2">
+                              <strong>Day 3-4:</strong> Big Five Tracking &
+                              Cultural Visit
+                            </div>
+                            <div class="mb-2">
+                              <strong>Day 5-6:</strong> Migration Viewing &
+                              Photography
+                            </div>
+                            <div>
+                              <strong>Day 7:</strong> Final Game Drive &
+                              Departure
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="includes">
+                          <div class="row g-3 small">
+                            <div class="col-6">
+                              <div class="d-flex align-items-center">
+                                <i
+                                  class="fas fa-utensils text-success me-2"></i>
+                                Full Board Meals
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="d-flex align-items-center">
+                                <i class="fas fa-car text-success me-2"></i>
+                                Transport
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="d-flex align-items-center">
+                                <i class="fas fa-bed text-success me-2"></i>
+                                Accommodation
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="d-flex align-items-center">
+                                <i
+                                  class="fas fa-user-tie text-success me-2"></i>
+                                Professional Guide
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Pricing and Booking -->
+                      <div class="mt-auto pt-3 border-top">
+                        <div
+                          class="d-flex align-items-center justify-content-between">
+                          <div>
+                            <small class="text-muted d-block">Starting
+                              from</small>
+                            <span class="h4 mb-0 text-primary">Ksh
+                              150,000</span>
+                            <small class="text-muted">per person</small>
+                          </div>
+                          <div class="d-flex gap-2">
+                            <button
+                              class="btn btn-outline-primary rounded-pill px-3">
+                              <i class="far fa-heart"></i>
+                            </button>
+                            <button class="btn btn-primary rounded-pill px-4">
+                              Book Now
+                              <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lake Nakuru Package -->
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed fw-semibold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#lakeNakuru">
+                <div class="d-flex align-items-center flex-grow-1">
+                  <i class="fas fa-dove text-primary me-3 fs-4"></i>
+                  <div
+                    class="d-flex justify-content-between align-items-center w-100">
+                    <span>Lake Nakuru Flamingo Safari - 4 Days</span>
+                    <div class="badges ms-3">
+                      <span class="badge bg-info">Bird Watching</span>
+                      <span class="badge bg-success ms-2">Available</span>
+                    </div>
+                  </div>
+                </div>
+              </button>
+            </h2>
+            <div
+              id="lakeNakuru"
+              class="accordion-collapse collapse"
+              data-bs-parent="#safariAccordion">
+              <div class="accordion-body bg-white">
+                <div class="row g-4">
+                  <!-- Image Gallery -->
+                  <div class="col-lg-6">
+                    <div class="position-relative rounded-4 overflow-hidden">
+                      <div
+                        id="nakuruCarousel"
+                        class="carousel slide"
+                        data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img
+                              src="1738564773696.jpg"
+                              class="d-block w-100 object-fit-cover"
+                              style="height: 300px"
+                              alt="Lake Nakuru" />
+                          </div>
+                          <div class="carousel-item">
+                            <img
+                              src="1738565032574.jpg"
+                              class="d-block w-100 object-fit-cover"
+                              style="height: 300px"
+                              alt="Rhino" />
+                          </div>
+                        </div>
+                        <button
+                          class="carousel-control-prev"
+                          type="button"
+                          data-bs-target="#nakuruCarousel"
+                          data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button
+                          class="carousel-control-next"
+                          type="button"
+                          data-bs-target="#nakuruCarousel"
+                          data-bs-slide="next">
+                          <span class="carousel-control-next-icon"></span>
+                        </button>
+                      </div>
+                      <div
+                        class="position-absolute bottom-0 start-0 p-3 bg-dark bg-opacity-75 text-white w-100">
+                        <div
+                          class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            Lake Nakuru, Kenya
+                          </div>
+                          <div>
+                            <i class="fas fa-calendar-alt me-2"></i>
+                            Best Time: Nov-Mar
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Package Details -->
+                  <div class="col-lg-6">
+                    <div class="d-flex flex-column h-100">
+                      <h5 class="mb-3">Package Highlights</h5>
+                      <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span
+                          class="badge bg-primary bg-opacity-10 text-primary">
+                          <i class="fas fa-feather me-1"></i> Bird Paradise
+                        </span>
+                        <span
+                          class="badge bg-success bg-opacity-10 text-success">
+                          <i class="fas fa-hotel me-1"></i> Lake View Lodge
+                        </span>
+                        <span class="badge bg-info bg-opacity-10 text-info">
+                          <i class="fas fa-camera me-1"></i> Photography
+                        </span>
+                      </div>
+
+                      <!-- Content Tabs -->
+                      <ul class="nav nav-tabs mb-3" role="tablist">
+                        <li class="nav-item">
+                          <button
+                            class="nav-link active"
+                            data-bs-toggle="tab"
+                            data-bs-target="#nakuruOverview">
+                            Overview
+                          </button>
+                        </li>
+                        <li class="nav-item">
+                          <button
+                            class="nav-link"
+                            data-bs-toggle="tab"
+                            data-bs-target="#nakuruItinerary">
+                            Itinerary
+                          </button>
+                        </li>
+                        <li class="nav-item">
+                          <button
+                            class="nav-link"
+                            data-bs-toggle="tab"
+                            data-bs-target="#nakuruIncludes">
+                            Includes
+                          </button>
+                        </li>
+                      </ul>
+
+                      <div class="tab-content flex-grow-1">
+                        <div
+                          class="tab-pane fade show active"
+                          id="nakuruOverview">
+                          <ul class="list-unstyled mb-4">
+                            <li class="mb-2">
+                              <i
+                                class="fas fa-check-circle text-success me-2"></i>
+                              Flamingo and pelican viewing
+                            </li>
+                            <li class="mb-2">
+                              <i
+                                class="fas fa-check-circle text-success me-2"></i>
+                              Rhino sanctuary visit
+                            </li>
+                            <li class="mb-2">
+                              <i
+                                class="fas fa-check-circle text-success me-2"></i>
+                              Professional bird guide
+                            </li>
+                            <li class="mb-2">
+                              <i
+                                class="fas fa-check-circle text-success me-2"></i>
+                              Lake view accommodation
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="tab-pane fade" id="nakuruItinerary">
+                          <div class="small">
+                            <div class="mb-2">
+                              <strong>Day 1:</strong> Arrival & Lake
+                              Introduction
+                            </div>
+                            <div class="mb-2">
+                              <strong>Day 2-3:</strong> Bird Watching &
+                              Photography
+                            </div>
+                            <div>
+                              <strong>Day 4:</strong> Rhino Sanctuary &
+                              Departure
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="nakuruIncludes">
+                          <div class="row g-3 small">
+                            <div class="col-6">
+                              <div class="d-flex align-items-center">
+                                <i
+                                  class="fas fa-binoculars text-success me-2"></i>
+                                Bird Guide
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="d-flex align-items-center">
+                                <i class="fas fa-car text-success me-2"></i>
+                                Transport
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="d-flex align-items-center">
+                                <i class="fas fa-bed text-success me-2"></i>
+                                Lake View Room
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="d-flex align-items-center">
+                                <i
+                                  class="fas fa-utensils text-success me-2"></i>
+                                Full Board
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Pricing and Booking -->
+                      <div class="mt-auto pt-3 border-top">
+                        <div
+                          class="d-flex align-items-center justify-content-between">
+                          <div>
+                            <small class="text-muted d-block">Starting
+                              from</small>
+                            <span class="h4 mb-0 text-primary">Ksh 85,000</span>
+                            <small class="text-muted">per person</small>
+                          </div>
+                          <div class="d-flex gap-2">
+                            <button
+                              class="btn btn-outline-primary rounded-pill px-3">
+                              <i class="far fa-heart"></i>
+                            </button>
+                            <button class="btn btn-primary rounded-pill px-4">
+                              Book Now
+                              <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mount Kenya Climbing Package -->
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed fw-semibold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mtKenya">
+                <div class="d-flex align-items-center flex-grow-1">
+                  <i class="fas fa-mountain text-primary me-3 fs-4"></i>
+                  <div
+                    class="d-flex justify-content-between align-items-center w-100">
+                    <span>Mount Kenya Climbing Adventure - 6 Days</span>
+                    <div class="badges ms-3">
+                      <span class="badge bg-danger">Challenging</span>
+                      <span class="badge bg-warning ms-2">Adventure</span>
+                    </div>
+                  </div>
+                </div>
+              </button>
+            </h2>
+            <div
+              id="mtKenya"
+              class="accordion-collapse collapse"
+              data-bs-parent="#safariAccordion">
+              <div class="accordion-body bg-white">
+                <div class="row g-4">
+                  <!-- Image Gallery -->
+                  <div class="col-lg-6">
+                    <div class="position-relative rounded-4 overflow-hidden">
+                      <div
+                        id="mtKenyaCarousel"
+                        class="carousel slide"
+                        data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img
+                              src="1738565328722.jpg"
+                              class="d-block w-100 object-fit-cover"
+                              style="height: 300px"
+                              alt="Mount Kenya Peak" />
+                          </div>
+                          <div class="carousel-item">
+                            <img
+                              src="1738565604955.jpg "
+                              class="d-block w-100 object-fit-cover"
+                              style="height: 300px"
+                              alt="Mountain Camp" />
+                          </div>
+                        </div>
+                        <button
+                          class="carousel-control-prev"
+                          type="button"
+                          data-bs-target="#mtKenyaCarousel"
+                          data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button
+                          class="carousel-control-next"
+                          type="button"
+                          data-bs-target="#mtKenyaCarousel"
+                          data-bs-slide="next">
+                          <span class="carousel-control-next-icon"></span>
+                        </button>
+                      </div>
+                      <!-- Location and Weather Info -->
+                      <div
+                        class="position-absolute bottom-0 start-0 p-3 bg-dark bg-opacity-75 text-white w-100">
+                        <div
+                          class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            Mount Kenya, 5,199m
+                          </div>
+                          <div>
+                            <i class="fas fa-thermometer-half me-2"></i>
+                            -2°C to 15°C
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Difficulty Badge -->
+                      <div class="position-absolute top-0 end-0 m-3">
+                        <div class="d-flex gap-2">
+                          <span class="badge bg-danger">
+                            <i class="fas fa-hiking me-1"></i>
+                            Technical Climb
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Package Details -->
+                  <div class="col-lg-6">
+                    <div class="d-flex flex-column h-100">
+                      <h5 class="mb-3">Adventure Highlights</h5>
+                      <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span
+                          class="badge bg-primary bg-opacity-10 text-primary">
+                          <i class="fas fa-mountain me-1"></i> Peak Summit
+                        </span>
+                        <span
+                          class="badge bg-success bg-opacity-10 text-success">
+                          <i class="fas fa-campground me-1"></i> Mountain
+                          Camping
+                        </span>
+                        <span class="badge bg-info bg-opacity-10 text-info">
+                          <i class="fas fa-cloud me-1"></i> Alpine Zones
+                        </span>
+                      </div>
+
+                      <!-- Content Tabs -->
+                      <ul class="nav nav-tabs mb-3" role="tablist">
+                        <li class="nav-item">
+                          <button
+                            class="nav-link active"
+                            data-bs-toggle="tab"
+                            data-bs-target="#mtKenyaOverview">
+                            Overview
+                          </button>
+                        </li>
+                        <li class="nav-item">
+                          <button
+                            class="nav-link"
+                            data-bs-toggle="tab"
+                            data-bs-target="#mtKenyaItinerary">
+                            Route
+                          </button>
+                        </li>
+                        <li class="nav-item">
+                          <button
+                            class="nav-link"
+                            data-bs-toggle="tab"
+                            data-bs-target="#mtKenyaIncludes">
+                            Equipment
+                          </button>
+                        </li>
+                      </ul>
+
+                      <div class="tab-content flex-grow-1">
+                        <div
+                          class="tab-pane fade show active"
+                          id="mtKenyaOverview">
+                          <ul class="list-unstyled mb-4">
+                            <li class="mb-2">
+                              <i
+                                class="fas fa-check-circle text-success me-2"></i>
+                              Professional mountain guides
+                            </li>
+                            <li class="mb-2">
+                              <i
+                                class="fas fa-check-circle text-success me-2"></i>
+                              High-altitude camping experience
+                            </li>
+                            <li class="mb-2">
+                              <i
+                                class="fas fa-check-circle text-success me-2"></i>
+                              Safety equipment provided
+                            </li>
+                            <li class="mb-2">
+                              <i
+                                class="fas fa-check-circle text-success me-2"></i>
+                              Summit certificate upon completion
+                            </li>
+                          </ul>
+                          <!-- Fitness Warning -->
+                          <div
+                            class="alert alert-warning d-flex align-items-center"
+                            role="alert">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            <small>Good physical fitness required. Medical check
+                              recommended.</small>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="mtKenyaItinerary">
+                          <div class="small">
+                            <div class="mb-2">
+                              <strong>Day 1:</strong> Arrival & Acclimatization
+                            </div>
+                            <div class="mb-2">
+                              <strong>Day 2-3:</strong> Ascent via Sirimon Route
+                            </div>
+                            <div class="mb-2">
+                              <strong>Day 4:</strong> Summit Attempt
+                            </div>
+                            <div class="mb-2">
+                              <strong>Day 5-6:</strong> Descent & Departure
+                            </div>
+                          </div>
+                          <!-- Altitude Profile -->
+                          <div class="mt-3 p-2 bg-light rounded">
+                            <small class="d-block text-muted mb-1">Altitude
+                              Profile</small>
+                            <div class="progress" style="height: 10px">
+                              <div
+                                class="progress-bar bg-success"
+                                style="width: 25%">
+                                2000m
+                              </div>
+                              <div
+                                class="progress-bar bg-warning"
+                                style="width: 45%">
+                                3500m
+                              </div>
+                              <div
+                                class="progress-bar bg-danger"
+                                style="width: 30%">
+                                5199m
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="mtKenyaIncludes">
+                          <div class="row g-3 small">
+                            <div class="col-6">
+                              <div class="d-flex align-items-center">
+                                <i
+                                  class="fas fa-helmet-safety text-success me-2"></i>
+                                Climbing Gear
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="d-flex align-items-center">
+                                <i
+                                  class="fas fa-campground text-success me-2"></i>
+                                Camping Equipment
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="d-flex align-items-center">
+                                <i
+                                  class="fas fa-utensils text-success me-2"></i>
+                                Mountain Meals
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="d-flex align-items-center">
+                                <i
+                                  class="fas fa-first-aid text-success me-2"></i>
+                                First Aid Kit
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Pricing and Booking -->
+                      <div class="mt-auto pt-3 border-top">
+                        <div
+                          class="d-flex align-items-center justify-content-between">
+                          <div>
+                            <small class="text-muted d-block">Starting
+                              from</small>
+                            <span class="h4 mb-0 text-primary">Ksh
+                              160,000</span>
+                            <small class="text-muted">per person</small>
+                          </div>
+                          <div class="d-flex gap-2">
+                            <button
+                              class="btn btn-outline-primary rounded-pill px-3"
+                              data-bs-toggle="tooltip"
+                              title="Save for Later">
+                              <i class="far fa-heart"></i>
+                            </button>
+                            <button class="btn btn-primary rounded-pill px-4">
+                              Book Now
+                              <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+    <!--  Safari Contact Section -->
+    <section
+      id="contact"
+      class="py-5 position-relative overflow-hidden"
+      style="
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+          url('DeWatermark.ai_1738557212410.png') center/cover no-repeat;
+      ">
+      <div class="container py-lg-5">
+        <!-- Creative Section Header -->
+        <div class="text-center mb-5" data-aos="fade-up">
+          <!-- Safari Theme Badges -->
+          <div class="d-flex justify-content-center gap-3 mb-4 flex-wrap">
+            <span class="badge bg-warning px-3 py-2 rounded-pill">
+              <i class="fas fa-compass me-2"></i>Adventure Awaits
+            </span>
+            <span class="badge bg-danger px-3 py-2 rounded-pill">
+              <i class="fas fa-heart me-2"></i>Create Memories
+            </span>
+            <span class="badge bg-success px-3 py-2 rounded-pill">
+              <i class="fas fa-leaf me-2"></i>Experience Nature
+            </span>
+          </div>
+
+          <!-- Main Heading with enhanced visibility -->
+          <h2
+            class="display-4 fw-bold mb-3"
+            style="
+              color: #ff8c00;
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.932);
+            ">
+            Let's Plan Your <span style="color: #fff">Dream Safari</span>
+          </h2>
+
+          <!-- Enhanced Tribal Separator -->
+          <div
+            class="d-flex align-items-center justify-content-center gap-3 my-4">
+            <div
+              style="
+                height: 2px;
+                width: 50px;
+                background: linear-gradient(to right, #ff8c00, #ffa500);
+              "></div>
+            <i class="fas fa-paw fa-2x" style="color: #ff8c00"></i>
+            <div
+              style="
+                height: 2px;
+                width: 50px;
+                background: linear-gradient(to left, #ff8c00, #ffa500);
+              "></div>
+          </div>
+
+          <!-- subheading  -->
+          <p
+            class="lead mb-0"
+            style="color: #ffffff; text-shadow: 1px 1px 3px rgb(0, 0, 0)">
+            From the <span style="color: #ffa500">Maasai Mara</span> to
+            <span style="color: #ffa500">Amboseli</span>, we'll craft your
+            perfect African adventure
+          </p>
+
+          <!-- Feature Icons with enhanced visibility -->
+          <div class="row justify-content-center mt-5 g-4">
+            <div class="col-md-4">
+              <div class="d-flex align-items-center justify-content-center">
+                <i
+                  class="fas fa-map-marked-alt fa-2x me-3"
+                  style="color: #ff8c00"></i>
+                <div class="text-start">
+                  <h5
+                    class="mb-1"
+                    style="color: #fff; text-shadow: 1px 1px 3px rgb(0, 0, 0)">
+                    Tailored Itineraries
+                  </h5>
+                  <p
+                    class="mb-0 small"
+                    style="
+                      color: #ffe4b5;
+                      text-shadow: 1px 1px 3px rgb(0, 0, 0);
+                    ">
+                    Customized to your preferences
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="d-flex align-items-center justify-content-center">
+                <i class="fas fa-users fa-2x me-3" style="color: #ff8c00"></i>
+                <div class="text-start">
+                  <h5
+                    class="mb-1"
+                    style="
+                      color: #fff;
+                      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.973);
+                    ">
+                    Expert Guides
+                  </h5>
+                  <p
+                    class="mb-0 small"
+                    style="
+                      color: #ffe4b5;
+                      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.973);
+                    ">
+                    Local knowledge & expertise
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="d-flex align-items-center justify-content-center">
+                <i
+                  class="fas fa-shield-alt fa-2x me-3"
+                  style="color: #ff8c00"></i>
+                <div class="text-start">
+                  <h5
+                    class="mb-1"
+                    style="
+                      color: #fff;
+                      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.979);
+                    ">
+                    Safe Travel
+                  </h5>
+                  <p
+                    class="mb-0 small"
+                    style="
+                      color: #ffe4b5;
+                      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.973);
+                    ">
+                    Your security is our priority
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form Card -->
+        <style>
+          /* Custom Properties */
+          :root {
+              --safari-primary: #ff8c00;
+              --safari-secondary: #8b4513;
+              --safari-accent: #ffa500;
+              --safari-light: #ffe4b5;
+              --safari-dark: #4a3419;
+              --transition-main: all 0.3s ease-in-out;
+          }
+  
+          /* Base Styles */
+          body {
+              font-family: 'Poppins', sans-serif;
+              background-color: #f8f9fa;
+          }
+  
+          .safari-booking-section {
+              background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                          url('DeWatermark.ai_1738557212410.png') center/cover fixed;
+              padding: 100px 0;
+              position: relative;
+              color: #fff;
+          }
+  
+          /* Card Styles */
+          .booking-card {
+              background: rgba(255, 255, 255, 0.95);
+              border-radius: 20px;
+              overflow: hidden;
+              box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+              backdrop-filter: blur(10px);
+          }
+  
+          /* Form Styles */
+          .form-control, .form-select {
+              border: 2px solid rgba(139, 69, 19, 0.2);
+              border-radius: 10px;
+              padding: 15px;
+              font-size: 1rem;
+              background-color: rgba(255, 255, 255, 0.9);
+              transition: var(--transition-main);
+          }
+  
+          .form-control:focus, .form-select:focus {
+              border-color: var(--safari-primary);
+              box-shadow: 0 0 0 0.25rem rgba(255, 140, 0, 0.521);
+          }
+  
+          .form-label {
+              font-weight: 500;
+              color: var(--safari-dark);
+              margin-bottom: 0.5rem;
+          }
+  
+          /* Package Cards */
+          .package-card {
+              border: 2px solid rgba(139, 69, 19, 0.2);
+              border-radius: 15px;
+              overflow: hidden;
+              transition: var(--transition-main);
+              cursor: pointer;
+          }
+  
+          .package-card.selected {
+              border-color: var(--safari-primary);
+              background: rgba(255, 140, 0, 0.1);
+          }
+  
+          .package-card img {
+              width: 100%;
+              height: 200px;
+              object-fit: cover;
+          }
+  
+          .package-card h5 {
+              color: var(--safari-dark);
+              font-weight: 600;
+          }
+  
+          .package-card p {
+              color: #666;
+              font-size: 0.9rem;
+          }
+  
+          /* Progress Bar */
+          .booking-progress {
+              background: rgb(0, 0, 0);
+              height: 9px;
+              border-radius: 10px;
+              margin-bottom: 30px;
+          }
+  
+          .progress-value {
+              background: var(--safari-primary);
+              height: 100%;
+              border-radius: 10px;
+              transition: width 0.3s ease;
+          }
+  
+          /* Contact Sidebar */
+          .contact-sidebar {
+              background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                          url('1738536569778.jpg') center/cover;
+              color: rgb(255, 255, 255);
+              padding: 40px;
+              border-radius: 0 20px 20px 0;
+              position: relative;
+          }
+  
+          .contact-sidebar::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: rgba(255, 140, 0, 0.6);
+              border-radius: 0 20px 20px 0;
+          }
+  
+          .contact-sidebar h4,
+          .contact-sidebar h6,
+          .contact-sidebar p {
+              position: relative;
+              z-index: 1;
+          }
+  
+          /* Submit Button */
+          .safari-submit {
+              background: var(--safari-primary);
+              color: white;
+              border: none;
+              padding: 15px 30px;
+              border-radius: 30px;
+              font-weight: 600;
+              transition: var(--transition-main);
+              width: 100%;
+          }
+  
+          .safari-submit:hover {
+              background: var(--safari-secondary);
+              transform: translateY(-2px);
+              box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+          }
+  
+          /* Toast Notification */
+          .safari-toast {
+              position: fixed;
+              bottom: 20px;
+              right: 20px;
+              background: var(--safari-primary);
+              color: white;
+              padding: 15px 25px;
+              border-radius: 10px;
+              display: none;
+              z-index: 1000;
+              box-shadow: 0 5px 15px rgba(0, 0, 0, 0.63);
+          }
+  
+          /* Hide all steps by default */
+          .booking-step {
+              display: none;
+          }
+  
+          /* Show the active step */
+          .booking-step.active {
+              display: block;
+          }
+  
+          /* Step Titles */
+          .step-title {
+              color: var(--safari-dark);
+              font-weight: 600;
+              margin-bottom: 20px;
+          }
+  
+          /* Confirmation Details */
+          .confirmation-details {
+              background: rgba(255, 255, 255, 0.9);
+              border-radius: 15px;
+              padding: 20px;
+              box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          }
+  
+          .confirmation-details p {
+              margin-bottom: 10px;
+              color: var(--safari-dark);
+          }
+  
+          .confirmation-details strong {
+              color: var(--safari-primary);
+          }
+      </style>
+  </head>
+  <body>
+  
+  <!-- Booking Section -->
+  
+          <!-- Booking Progress -->
+          <div class="booking-progress mb-5">
+              <div class="progress-value" style="width: 0%"></div>
+          </div>
+  
+          <!-- Booking Card -->
+          <div class="row justify-content-center">
+              <div class="col-lg-10">
+                  <div class="booking-card">
+                      <div class="row g-0">
+                          <!-- Booking Form -->
+                          <div class="col-lg-8">
+                              <div class="p-5">
+                                  <form id="safariBookingForm" class="needs-validation" novalidate>
+                                      <!-- Step 1: Personal Details -->
+                                      <div class="booking-step active" data-step="1">
+                                          <h4 class="step-title">Personal Information</h4>
+                                          <div class="row g-4">
+                                              <div class="col-md-6">
+                                                  <label class="form-label">Full Name</label>
+                                                  <input type="text" class="form-control" id="fullName" required>
+                                              </div>
+                                              <div class="col-md-6">
+                                                  <label class="form-label">Email Address</label>
+                                                  <input type="email" class="form-control" id="email" required>
+                                              </div>
+                                              <div class="col-md-6">
+                                                  <label class="form-label">Phone Number</label>
+                                                  <input type="tel" class="form-control" id="phone" required>
+                                              </div>
+                                              <div class="col-md-6">
+                                                <label class="form-label">Citizenship</label>
+                                                <select class="form-select" id="citizenship" required>
+                                                    <option value="">Select Citizenship</option>
+                                                    <option value="kenyan">Kenyan Citizen</option>
+                                                    <option value="east_african">East African Origin Citizen</option>
+                                                    <option value="african">African Citizen</option>
+                                                    <option value="foreign">Foreign Citizen</option>
+                                                </select>
+                                            </div>
+                                            
+                                          </div>
+                                      </div>
+  
+                                      <!-- choose package step 2 -->
+                                      <div class="booking-step safari-packages py-5" data-step="2">
+                                        <h4 class="step-title text-center display-5 mb-5">Choose Your Kenyan Safari Package</h4>
+                                        <div class="row g-4">
+                                            <!-- Classic Safari -->
+                                            <div class="col-md-6">
+                                                <div class="package-card card h-100 shadow-sm hover-effect" onclick="selectPackage('classic')">
+                                                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801" 
+                                                         class="card-img-top safari-img" alt="Classic Safari">
+                                                    <div class="card-body p-4">
+                                                        <div class="package-badge">Popular Choice</div>
+                                                        <h5 class="card-title text-primary mb-3">Classic Safari</h5>
+                                                        <p class="card-text text-muted"><i class="bi bi-calendar3"></i> 5 days, 4 nights</p>
+                                                        <p class="card-text price-tag"><strong>KES 180,000 per person</strong></p>
+                                                        <p class="card-text">Experience the heart of Kenya's wildlife with guided tours in Maasai Mara and Amboseli. Stay in comfortable lodges and enjoy game drives.</p>
+                                                        <button class="btn btn-outline-primary w-100 py-3 rounded-3">Select Package</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    
+                                            <!-- Luxury Safari -->
+                                            <div class="col-md-6">
+                                                <div class="package-card card h-100 shadow-sm hover-effect" onclick="selectPackage('luxury')">
+                                                    <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e" 
+                                                         class="card-img-top safari-img" alt="Luxury Safari">
+                                                    <div class="card-body p-4">
+                                                        <div class="package-badge premium">Premium</div>
+                                                        <h5 class="card-title text-primary mb-3">Luxury Safari</h5>
+                                                        <p class="card-text text-muted"><i class="bi bi-calendar3"></i> 7 days, 6 nights</p>
+                                                        <p class="card-text price-tag"><strong>KES 300,000 per person</strong></p>
+                                                        <p class="card-text">Indulge in exclusive luxury lodges and private tours in Samburu and Tsavo. Enjoy gourmet meals and personalized services.</p>
+                                                        <button class="btn btn-outline-primary w-100 py-3 rounded-3">Select Package</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    
+                                            <!-- Adventure Safari -->
+                                            <div class="col-md-6">
+                                                <div class="package-card card h-100 shadow-sm hover-effect" onclick="selectPackage('adventure')">
+                                                    <img src="https://images.unsplash.com/photo-1535941339077-2dd1c7963098" 
+                                                         class="card-img-top safari-img" alt="Adventure Safari">
+                                                    <div class="card-body p-4">
+                                                        <div class="package-badge adventure">Adventure</div>
+                                                        <h5 class="card-title text-primary mb-3">Adventure Safari</h5>
+                                                        <p class="card-text text-muted"><i class="bi bi-calendar3"></i> 10 days, 9 nights</p>
+                                                        <p class="card-text price-tag"><strong>KES 420,000 per person</strong></p>
+                                                        <p class="card-text">Thrill-seekers will love this package! Hike Mount Kenya, camp under the stars, and track wildlife in Laikipia.</p>
+                                                        <button class="btn btn-outline-primary w-100 py-3 rounded-3">Select Package</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    
+                                            <!-- Family Safari -->
+                                            <div class="col-md-6">
+                                                <div class="package-card card h-100 shadow-sm hover-effect" onclick="selectPackage('family')">
+                                                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e" 
+                                                         class="card-img-top safari-img" alt="Family Safari">
+                                                    <div class="card-body p-4">
+                                                        <div class="package-badge family">Family</div>
+                                                        <h5 class="card-title text-primary mb-3">Family Safari</h5>
+                                                        <p class="card-text text-muted"><i class="bi bi-calendar3"></i> 8 days, 7 nights</p>
+                                                        <p class="card-text price-tag"><strong>KES 240,000 per person</strong></p>
+                                                        <p class="card-text">A family-friendly adventure in Nairobi National Park and Lake Nakuru. Includes kid-friendly activities and spacious lodges.</p>
+                                                        <button class="btn btn-outline-primary w-100 py-3 rounded-3">Select Package</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <style>
+                                        .safari-packages {
+                                            background-color: #fafbfc;
+                                            padding: 40px 0;
+                                        }
+                                    
+                                        .package-card {
+                                            transition: all 0.3s ease;
+                                            border-radius: 15px;
+                                            overflow: hidden;
+                                        }
+                                    
+                                        .hover-effect:hover {
+                                            transform: translateY(-5px);
+                                            box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+                                        }
+                                    
+                                        .safari-img {
+                                            height: 250px;
+                                            object-fit: cover;
+                                        }
+                                    
+                                        .package-badge {
+                                            position: absolute;
+                                            top: 20px;
+                                            right: 20px;
+                                            padding: 8px 15px;
+                                            border-radius: 20px;
+                                            font-weight: 600;
+                                            background: rgba(255,255,255,0.9);
+                                            color: #2c3e50;
+                                        }
+                                    
+                                        .package-badge.premium {
+                                            background: #ffd700;
+                                            color: #000;
+                                        }
+                                    
+                                        .package-badge.adventure {
+                                            background: #28a745;
+                                            color: #fff;
+                                        }
+                                    
+                                        .package-badge.family {
+                                            background: #17a2b8;
+                                            color: #fff;
+                                        }
+                                    
+                                        .price-tag {
+                                            font-size: 1.2rem;
+                                            color: #2c3e50;
+                                            margin: 15px 0;
+                                        }
+                                    
+                                        .card-title {
+                                            font-size: 1.5rem;
+                                            font-weight: 600;
+                                        }
+                                    
+                                        .card-text {
+                                            line-height: 1.6;
+                                        }
+                                    </style>
+  
+                                      <!-- Step 3: Date Selection -->
+                                      <div class="booking-step safari-date-picker" data-step="3">
+                                        <h4 class="step-title">Select Your Safari Dates</h4>
+                                        <div class="row g-4">
+                                            <div class="col-md-6">
+                                                <div class="date-input-group">
+                                                    <label class="safari-date-label">Start Date</label>
+                                                    <div class="date-input-wrapper">
+                                                        <i class="bi bi-calendar-event"></i>
+                                                        <input type="date" 
+                                                               class="safari-date-input" 
+                                                               id="startDate" 
+                                                               required
+                                                               min="">
+                                                        <div class="date-validation-message"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="date-input-group">
+                                                    <label class="safari-date-label">End Date</label>
+                                                    <div class="date-input-wrapper">
+                                                        <i class="bi bi-calendar-event"></i>
+                                                        <input type="date" 
+                                                               class="safari-date-input" 
+                                                               id="endDate" 
+                                                               required
+                                                               min="">
+                                                        <div class="date-validation-message"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <style>
+                                    .safari-date-picker {
+                                        padding: 25px 0;
+                                    }
+                                    
+                                    .date-input-group {
+                                        position: relative;
+                                        margin-bottom: 15px;
+                                    }
+                                    
+                                    .safari-date-label {
+                                        display: block;
+                                        margin-bottom: 8px;
+                                        color: #2c3e50;
+                                        font-weight: 500;
+                                        font-size: 14px;
+                                    }
+                                    
+                                    .date-input-wrapper {
+                                        position: relative;
+                                    }
+                                    
+                                    .date-input-wrapper i {
+                                        position: absolute;
+                                        left: 12px;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                        color: #2c3e50;
+                                        z-index: 1;
+                                    }
+                                    
+                                    .safari-date-input {
+                                        width: 100%;
+                                        padding: 12px 12px 12px 40px;
+                                        border: 2px solid #e9ecef;
+                                        border-radius: 10px;
+                                        font-size: 15px;
+                                        transition: all 0.3s ease;
+                                        background-color: #fff;
+                                        color: #2c3e50;
+                                    }
+                                    
+                                    .safari-date-input:focus {
+                                        border-color: #2c3e50;
+                                        outline: none;
+                                        box-shadow: 0 0 0 4px rgba(44, 62, 80, 0.1);
+                                    }
+                                    
+                                    .safari-date-input::-webkit-calendar-picker-indicator {
+                                        background-color: transparent;
+                                        padding: 8px;
+                                        cursor: pointer;
+                                        position: absolute;
+                                        right: 8px;
+                                        opacity: 0.6;
+                                        transition: opacity 0.2s ease;
+                                    }
+                                    
+                                    .safari-date-input::-webkit-calendar-picker-indicator:hover {
+                                        opacity: 1;
+                                    }
+                                    
+                                    .date-validation-message {
+                                        font-size: 12px;
+                                        color: #dc3545;
+                                        margin-top: 5px;
+                                        min-height: 20px;
+                                    }
+                                    
+                                    /* Disable past dates styling */
+                                    .safari-date-input[type="date"]::-webkit-datetime-edit-day-field[aria-valuetext="--"],
+                                    .safari-date-input[type="date"]::-webkit-datetime-edit-month-field[aria-valuetext="--"],
+                                    .safari-date-input[type="date"]::-webkit-datetime-edit-year-field[aria-valuetext="--"] {
+                                        color: #6c757d;
+                                    }
+                                    </style>
+                                    
+                                    <script>
+                                    // Set minimum dates to today
+                                    document.addEventListener('DOMContentLoaded', function() {
+                                        const today = new Date();
+                                        const maxDate = new Date(today);
+                                        maxDate.setFullYear(today.getFullYear() + 1); // Allow booking up to 1 year in advance
+                                        
+                                        const formatDate = (date) => {
+                                            return date.toISOString().split('T')[0];
+                                        };
+                                    
+                                        const startDateInput = document.getElementById('startDate');
+                                        const endDateInput = document.getElementById('endDate');
+                                    
+                                        // Set min dates
+                                        startDateInput.min = formatDate(today);
+                                        startDateInput.max = formatDate(maxDate);
+                                        endDateInput.min = formatDate(today);
+                                        endDateInput.max = formatDate(maxDate);
+                                    
+                                        // Update end date min value when start date changes
+                                        startDateInput.addEventListener('change', function() {
+                                            const startDate = new Date(this.value);
+                                            endDateInput.min = formatDate(startDate);
+                                            
+                                            // If end date is before new start date, update it
+                                            if (new Date(endDateInput.value) < startDate) {
+                                                endDateInput.value = this.value;
+                                            }
+                                        });
+                                    
+                                        // Validate date selections
+                                        function validateDates() {
+                                            const startDate = new Date(startDateInput.value);
+                                            const endDate = new Date(endDateInput.value);
+                                            const startMessage = startDateInput.nextElementSibling;
+                                            const endMessage = endDateInput.nextElementSibling;
+                                    
+                                            if (startDate < today) {
+                                                startMessage.textContent = 'Please select a future date';
+                                                return false;
+                                            }
+                                            
+                                            if (endDate < startDate) {
+                                                endMessage.textContent = 'End date must be after start date';
+                                                return false;
+                                            }
+                                    
+                                            startMessage.textContent = '';
+                                            endMessage.textContent = '';
+                                            return true;
+                                        }
+                                    
+                                        [startDateInput, endDateInput].forEach(input => {
+                                            input.addEventListener('change', validateDates);
+                                        });
+                                    });
+                                    </script>
+  
+                                      <!-- Step 4: Special Requests -->
+                                      <div class="booking-step" data-step="4">
+                                          <h4 class="step-title">Special Requests</h4>
+                                          <div class="row g-4">
+                                              <div class="col-12">
+                                                  <label class="form-label">Dietary Requirements</label>
+                                                  <input type="text" class="form-control" id="dietary">
+                                              </div>
+                                              <div class="col-12">
+                                                  <label class="form-label">Accommodation Preferences</label>
+                                                  <input type="text" class="form-control" id="accommodation">
+                                              </div>
+                                              <div class="col-12">
+                                                  <label class="form-label">Additional Notes</label>
+                                                  <textarea class="form-control" id="notes" rows="4"></textarea>
+                                              </div>
+                                          </div>
+                                      </div>
+  
+                                      <!-- Step 5: Confirmation -->
+                                      <div class="booking-step" data-step="5">
+                                          <h4 class="step-title">Confirm Your Booking</h4>
+                                          <div class="row g-4">
+                                              <div class="col-12">
+                                                  <div class="confirmation-details">
+                                                      <p><strong>Name:</strong> <span id="confirmName"></span></p>
+                                                      <p><strong>Email:</strong> <span id="confirmEmail"></span></p>
+                                                      <p><strong>Phone:</strong> <span id="confirmPhone"></span></p>
+                                                      <p><strong>Citizenship:</strong> <span id="confirmCountry"></span></p>
+                                                      <p><strong>Package:</strong> <span id="confirmPackage"></span></p>
+                                                      <p><strong>Dates:</strong> <span id="confirmDates"></span></p>
+                                                      <p><strong>Special Requests:</strong> <span id="confirmRequests"></span></p>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <button type="button" class="btn safari-submit mt-4" onclick="submitBooking()">Submit Booking</button>
+                                      </div>
+  
+                                      <!-- Navigation Buttons -->
+                                      <div class="d-flex justify-content-between mt-4">
+                                          <button type="button" class="btn safari-submit" id="prevButton" style="width: auto;" disabled onclick="previousStep()">Previous</button>
+                                          <button type="button" class="btn safari-submit" id="nextButton" style="width: auto;" onclick="nextStep()">Next</button>
+                                      </div>
+                                  </form>
+                              </div>
+                          </div>
+  
+                          <!-- Contact Sidebar -->
+                          <div class="col-lg-4">
+                              <div class="contact-sidebar h-100">
+                                  <h4 class="mb-4">Need Assistance?</h4>
+                                  <div class="mb-4">
+                                      <div class="d-flex align-items-center mb-3">
+                                          <div class="feature-icon me-3">
+                                              <i class="fas fa-phone"></i>
+                                          </div>
+                                          <div>
+                                              <h6 class="mb-1">Call Us</h6>
+                                              <p class="mb-0">+254 123 456 789</p>
+                                          </div>
+                                      </div>
+                                      <div class="d-flex align-items-center mb-3">
+                                          <div class="feature-icon me-3">
+                                              <i class="fas fa-envelope"></i>
+                                          </div>
+                                          <div>
+                                              <h6 class="mb-1">Email Us</h6>
+                                              <p class="mb-0">safari@example.com</p>
+                                          </div>
+                                      </div>
+                                      <div class="d-flex align-items-center">
+                                          <div class="feature-icon me-3">
+                                              <i class="fas fa-map-marker-alt"></i>
+                                          </div>
+                                          <div>
+                                              <h6 class="mb-1">Visit Us</h6>
+                                              <p class="mb-0">Nairobi, Kenya</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="position-fixed top-0 end-0 p-3" style="z-index: 1050;">
+        <div id="customToast" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="toastBody">
+                    Error message here!
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+    
+  
+      <!-- Toast Notification -->
+      <div class="safari-toast" id="safariToast">
+          <i class="fas fa-check-circle me-2"></i>
+          Booking submitted successfully!
+      </div>
+  </section>
+  
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function () {
+        let currentStep = 1;
+        const totalSteps = 5;
+        let selectedPackage = null;
+
+        function updateProgress() {
+            const progressValue = ((currentStep - 1) / (totalSteps - 1)) * 100;
+            document.querySelector(".progress-value").style.width = `${progressValue}%`;
+        }
+
+        function showStep(step) {
+            document.querySelectorAll(".booking-step").forEach((s) => {
+                s.style.display = "none";
+            });
+
+            const activeStep = document.querySelector(`[data-step="${step}"]`);
+            if (activeStep) {
+                activeStep.style.display = "block";
+            }
+
+            updateProgress();
+
+            const prevButton = document.getElementById("prevButton");
+            const nextButton = document.getElementById("nextButton");
+
+            prevButton.disabled = step === 1;
+            nextButton.disabled = step === totalSteps;
+
+            if (step === totalSteps) {
+                nextButton.style.display = "none";
+                updateConfirmationDetails();
+            } else {
+                nextButton.style.display = "inline-block";
+            }
+        }
+
+        function nextStep() {
+            if (validateStep(currentStep)) {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    showStep(currentStep);
+                    showToast("success", "Step completed successfully!");
+                }
+            } else {
+                showToast("error", "Please fill out all required fields before proceeding.");
+            }
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+
+        function validateStep(step) {
+            if (step === 1) {
+                const fullName = document.getElementById("fullName").value;
+                const email = document.getElementById("email").value;
+                const phone = document.getElementById("phone").value;
+                const citizenship = document.getElementById("citizenship").value;
+                return fullName && email && phone && citizenship;
+            } else if (step === 2) {
+                return selectedPackage !== null;
+            } else if (step === 3) {
+                const startDate = document.getElementById("startDate").value;
+                const endDate = document.getElementById("endDate").value;
+                return startDate && endDate;
+            }
+            return true;
+        }
+
+        function selectPackage(packageType) {
+            selectedPackage = packageType;
+            document.querySelectorAll(".package-card").forEach((card) => {
+                card.classList.remove("selected");
+            });
+            document.querySelector(`[onclick="selectPackage('${packageType}')"]`).classList.add("selected");
+        }
+
+        function updateConfirmationDetails() {
+            const fullName = document.getElementById("fullName").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const citizenship = document.getElementById("citizenship").value;
+            const startDate = document.getElementById("startDate").value;
+            const endDate = document.getElementById("endDate").value;
+            const dietary = document.getElementById("dietary").value;
+            const accommodation = document.getElementById("accommodation").value;
+            const notes = document.getElementById("notes").value;
+
+            const packageName = selectedPackage
+                ? selectedPackage.charAt(0).toUpperCase() + selectedPackage.slice(1) + " Safari"
+                : "Not selected";
+
+            const additionalRequests = `${dietary || "No dietary requests"}, ${accommodation || "No accommodation preferences"}, ${notes || "No additional notes"}`;
+
+            document.getElementById("confirmName").textContent = fullName || "Not provided";
+            document.getElementById("confirmEmail").textContent = email || "Not provided";
+            document.getElementById("confirmPhone").textContent = phone || "Not provided";
+            document.getElementById("confirmCountry").textContent = citizenship || "Not provided";
+            document.getElementById("confirmPackage").textContent = packageName;
+            document.getElementById("confirmDates").textContent = startDate && endDate ? `${startDate} to ${endDate}` : "Not provided";
+            document.getElementById("confirmRequests").textContent = additionalRequests;
+        }
+
+        function submitBooking() {
+            // Show success toast for final booking
+            const toast = document.getElementById("safariToast");
+            toast.style.display = "block";
+            setTimeout(() => {
+                toast.style.display = "none";
+            }, 3000);
+
+            // Reset form and steps
+            document.getElementById("safariBookingForm").reset();
+            currentStep = 1;
+            showStep(1);
+            selectedPackage = null;
+            document.querySelectorAll(".package-card").forEach((card) => {
+                card.classList.remove("selected");
+            });
+        }
+
+        function showToast(type, message) {
+            const toastEl = document.getElementById("customToast");
+            const toastBody = document.getElementById("toastBody");
+
+            toastBody.textContent = message;
+
+            if (type === "success") {
+                toastEl.classList.remove("bg-danger");
+                toastEl.classList.add("bg-success");
+            } else {
+                toastEl.classList.remove("bg-success");
+                toastEl.classList.add("bg-danger");
+            }
+
+            const toast = new bootstrap.Toast(toastEl);
+            toast.show();
+        }
+
+        showStep(currentStep);
+
+        window.nextStep = nextStep;
+        window.previousStep = previousStep;
+        window.selectPackage = selectPackage;
+        window.submitBooking = submitBooking;
+    })();
+</script>
+
+
+  
+    </section>
+
+    <!-- Enhanced Modern Footer -->
+    <footer
+      class="position-relative py-5"
+      style="
+        background: linear-gradient(rgba(0, 0, 0, 0.87), rgba(0, 0, 0, 0.95)),
+          url('DeWatermark.ai_1738558986732.png') center/cover no-repeat;
+      ">
+      <!-- Safari-themed Decorative Element -->
+      <div class="position-absolute top-0 start-0 w-100 overflow-hidden">
+        <svg
+          class="w-100"
+          style="height: 60px"
+          preserveAspectRatio="none"
+          viewBox="0 0 1200 120"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            opacity=".15"
+            fill="#FF8C00" />
+          <path
+            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+            opacity=".15"
+            fill="#FF8C00" />
+        </svg>
+      </div>
+
+      <div class="container position-relative">
+        <div class="row g-4 g-lg-5">
+          <!-- Brand Column -->
+          <div class="col-lg-4">
+            <div class="pe-lg-5">
+              <h3 class="text-white mb-4">KENYA YETU SAFARIS</h3>
+              <p class="text-white-50 mb-4">
+                Crafting unforgettable African adventures since 2010. Your
+                journey into the wild begins with us.
+              </p>
+              <div class="d-flex gap-3 mb-4">
+                <a
+                  href="#"
+                  class="btn btn-outline-light btn-sm rounded-circle"
+                  title="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="#"
+                  class="btn btn-outline-light btn-sm rounded-circle"
+                  title="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="#"
+                  class="btn btn-outline-light btn-sm rounded-circle"
+                  title="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="#"
+                  class="btn btn-outline-light btn-sm rounded-circle"
+                  title="YouTube">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <img
+                  src="proudly-kenyan-logo-27FD34464C-seeklogo.com.png"
+                  alt="Kenya Tourism Board"
+                  height="90"
+                  class="rounded" />
+                <img
+                  src="kenya-yetu-logo.jpg"
+                  alt="Safari Association"
+                  height="100"
+                  class="rounded" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-sm-6 col-lg-2">
+            <h5 class="text-white mb-4">Quick Links</h5>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-3">
+                <a
+                  href="#"
+                  class="text-white-50 text-decoration-none hover-text-warning">
+                  <i
+                    class="fas fa-chevron-right text-warning me-2 small"></i>About
+                  Us
+                </a>
+              </li>
+              <li class="mb-3">
+                <a
+                  href="#"
+                  class="text-white-50 text-decoration-none hover-text-warning">
+                  <i
+                    class="fas fa-chevron-right text-warning me-2 small"></i>Our
+                  Safaris
+                </a>
+              </li>
+              <li class="mb-3">
+                <a
+                  href="#"
+                  class="text-white-50 text-decoration-none hover-text-warning">
+                  <i
+                    class="fas fa-chevron-right text-warning me-2 small"></i>Destinations
+                </a>
+              </li>
+              <li class="mb-3">
+                <a
+                  href="#"
+                  class="text-white-50 text-decoration-none hover-text-warning">
+                  <i
+                    class="fas fa-chevron-right text-warning me-2 small"></i>Travel
+                  Guide
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-sm-6 col-lg-3">
+            <h5 class="text-white mb-4">Contact Info</h5>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-3">
+                <div class="d-flex">
+                  <i class="fas fa-map-marker-alt text-warning mt-1 me-3"></i>
+                  <span class="text-white-50">123 Safari Plaza, Nairobi,
+                    Kenya</span>
+                </div>
+              </li>
+              <li class="mb-3">
+                <div class="d-flex">
+                  <i class="fas fa-phone text-warning mt-1 me-3"></i>
+                  <span class="text-white-50">+254 123 456 789</span>
+                </div>
+              </li>
+              <li class="mb-3">
+                <div class="d-flex">
+                  <i class="fas fa-envelope text-warning mt-1 me-3"></i>
+                  <span class="text-white-50">info@safariexplorers.com</span>
+                </div>
+              </li>
+              <li>
+                <div class="d-flex">
+                  <i class="fas fa-clock text-warning mt-1 me-3"></i>
+                  <span class="text-white-50">Mon - Fri: 9:00 AM - 6:00
+                    PM</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-lg-3">
+            <h5 class="text-white mb-4">Newsletter</h5>
+            <p class="text-white-50 mb-4">
+              Subscribe to receive updates about our latest safari adventures
+              and special offers.
+            </p>
+            <form class="mb-3">
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control bg-dark border-dark text-white"
+                  placeholder="Your email" />
+                <button class="btn btn-warning" type="submit">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+            </form>
+            <!-- Payment Methods -->
+            <div class="mt-4">
+              <p class="text-white-50 mb-2 small">Secure Payment Methods:</p>
+              <div class="d-flex gap-2">
+                <i
+                  class="fab fa-cc-visa fa-2x"
+                  style="
+                    background: linear-gradient(135deg, #1a1f71, #0057a0);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                  "></i>
+                <i
+                  class="fab fa-cc-mastercard fa-2x"
+                  style="
+                    background: linear-gradient(
+                      45deg,
+                      #eb001b 0%,
+                      #eb001b 50%,
+                      #f79e1b 50%,
+                      #f79e1b 100%
+                    );
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                  "></i>
+                <i
+                  class="fab fa-cc-paypal fa-2x"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #003087 0%,
+                      #009cde 100%
+                    );
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                  "></i>
+                <div
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #0f9b18 0%,
+                      #1a8f3f 100%
+                    );
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-size: 1.3em;
+                    font-weight: bold;
+                  ">
+                  M-PESA
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="mt-5 pt-4 border-top border-secondary">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              <p class="text-white-50 mb-0">
+                © 2024 Kenya Yetu Safaris. All rights reserved.
+              </p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item">
+                  <a href="#"
+                    class="text-white-50 text-decoration-none small">Privacy
+                    Policy</a>
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a href="#"
+                    class="text-white-50 text-decoration-none small">Terms &
+                    Conditions</a>
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a href="#"
+                    class="text-white-50 text-decoration-none small">FAQs</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .hover-text-warning:hover {
+          color: #ffc107 !important;
+          transition: color 0.3s ease;
+        }
+        .form-control::placeholder {
+          color: rgba(255, 255, 255, 0.5);
+        }
+        .form-control:focus {
+          background-color: rgba(255, 255, 255, 0.1);
+          border-color: #ffc107;
+          box-shadow: none;
+        }
+      </style>
+    </footer>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll Progress Bar
+      window.onscroll = function () {
+        let winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        let height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        let scrolled = (winScroll / height) * 100;
+        document.querySelector(".scroll-progress").style.width = scrolled + "%";
+
+        // Navbar background change on scroll
+        if (window.scrollY > 50) {
+          document.querySelector(".navbar").classList.add("scrolled");
+        } else {
+          document.querySelector(".navbar").classList.remove("scrolled");
+        }
+      };
+
+      // Enhanced Weather Script
+      document.addEventListener("DOMContentLoaded", function () {
+        const API_KEY = "d3a5dc4c2d96413587822704250302";
+        const CITY = "Nairobi,Kenya";
+
+        async function getWeather() {
+          try {
+            const response = await fetch(
+              `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${CITY}&aqi=no`
+            );
+
+            if (!response.ok) throw new Error("Weather data not available");
+
+            const data = await response.json();
+            updateWeatherDisplay(data.current);
+          } catch (error) {
+            console.error("Weather Error:", error);
+            handleWeatherError();
+          }
+        }
+
+        function updateWeatherDisplay(current) {
+          // Update temperatures
+          const temp = Math.round(current.temp_c);
+          document.getElementById("current-temp").textContent = `${temp}°C`;
+          document.getElementById(
+            "current-temp-details"
+          ).textContent = `${temp}°C`;
+
+          // Update other metrics
+          document.getElementById("weather-desc").textContent =
+            current.condition.text;
+          document.getElementById(
+            "weather-humidity"
+          ).textContent = `${current.humidity}%`;
+          document.getElementById("weather-wind").textContent = `${Math.round(
+            current.wind_kph
+          )} km/h`;
+          document.getElementById("wind-direction").textContent =
+            current.wind_dir;
+
+          // Update weather icon and theme
+          const weatherType = getWeatherType(current.condition.code);
+          updateWeatherTheme(weatherType);
+
+          // Update time
+          const now = new Date();
+          document.getElementById("weather-time").textContent =
+            now.toLocaleTimeString("en-US", {
+              hour: "2-digit",
+              minute: "2-digit",
+            });
+        }
+
+        function getWeatherType(code) {
+          // Clear/Sunny
+          if (code === 1000) return "sunny";
+          // Partly cloudy/Cloudy
+          if (code >= 1003 && code <= 1030) return "cloudy";
+          // Rainy conditions
+          if (code >= 1063 && code <= 1201) return "rainy";
+          // Storm conditions
+          if (code >= 1087 && code <= 1282) return "stormy";
+          return "default";
+        }
+
+        function updateWeatherTheme(type) {
+          const widget = document.querySelector(".weather-widget");
+          const iconContainer = document.querySelector(".current-weather-icon");
+          const largeIconContainer = document.querySelector(
+            ".weather-icon-large"
+          );
+
+          // Remove all weather classes
+          widget.classList.remove(
+            "weather-sunny",
+            "weather-cloudy",
+            "weather-rainy",
+            "weather-stormy"
+          );
+
+          // Add appropriate weather class
+          widget.classList.add(`weather-${type}`);
+
+          // Update icons
+          const icons = {
+            sunny: '<i class="fas fa-sun"></i>',
+            cloudy: '<i class="fas fa-cloud"></i>',
+            rainy: '<i class="fas fa-cloud-rain"></i>',
+            stormy: '<i class="fas fa-bolt"></i>',
+            default: '<i class="fas fa-cloud"></i>',
+          };
+
+          iconContainer.innerHTML = icons[type];
+          largeIconContainer.innerHTML = icons[type];
+        }
+
+        function handleWeatherError() {
+          const errorIcon =
+            '<i class="fas fa-exclamation-circle text-danger"></i>';
+          document.querySelector(".current-weather-icon").innerHTML = errorIcon;
+          document.querySelector(".weather-icon-large").innerHTML = errorIcon;
+
+          document.getElementById("current-temp").textContent = "--°C";
+          document.getElementById("current-temp-details").textContent = "--°C";
+          document.getElementById("weather-desc").textContent =
+            "Weather data unavailable";
+          document.getElementById("weather-humidity").textContent = "--%";
+          document.getElementById("weather-wind").textContent = "-- km/h";
+          document.getElementById("wind-direction").textContent = "--";
+          document.getElementById("weather-time").textContent = "--:--";
+        }
+
+        // Initial weather fetch
+        getWeather();
+
+        // Update every 15 minutes
+        setInterval(getWeather, 15 * 60 * 1000);
+      });
+
+      // Form validation
+      (function () {
+        "use strict";
+        var forms = document.querySelectorAll(".needs-validation");
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              } else {
+                event.preventDefault();
+                showSuccessMessage();
+              }
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+
+      function showSuccessMessage() {
+        const alert = `
+                <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                    <i class="fas fa-check-circle me-2"></i>
+                    <strong>Asante Sana!</strong> We'll be in touch soon to plan your perfect safari.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            `;
+        document.querySelector("form").insertAdjacentHTML("beforeend", alert);
+      }
+    </script>
+  </body>
+</html>
