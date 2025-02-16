@@ -87,6 +87,7 @@ cd travel-agency-landing-page
 
 # Launch locally
 open index.html
+```
 📱 Cross-Platform Excellence
 PlatformStatusPerformance💻 Desktop✅ Optimized98/100📱 Mobile✅ Responsive95/100📟 Tablet✅ Adaptive97/100
 🤝 Join the Journey
@@ -156,4 +157,4 @@ Your contributions make open source magical! Here's how to add your touch:
 <div align="center">
  <sub>If you found this project helpful, please consider giving it a ⭐</sub>
 </div>
-```
+
