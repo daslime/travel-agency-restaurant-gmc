@@ -25,7 +25,7 @@ Welcome to my portfolio of dynamic landing pages, crafted during my journey at *
 ### 🎯 Live Experiences
 | Project | Status | Demo Link |
 |---------|--------|-----------|
-| 🍽️ BellaVista Restaurant | ✅ Live | [Visit Site](https://bellavista.netlify.app) |
+| 🍽️ BellaVista Restaurant | ✅ Live | [Visit Site](https://bellavistahotels.netlify.app) |
 | ✈️ Kenya Yetu Safaris | ✅ Live | [Visit Site](https://kenyayetusafaris.netlify.app) |
 
 ## 💫 Key Features
