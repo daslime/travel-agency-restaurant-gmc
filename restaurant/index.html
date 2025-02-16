@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nyama Choma Haven - Authentic African Cuisine</title>
+    lin
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary-color: #e67817; /* Warm African sunset orange */
+        --accent-color: #c17f59; /* Earth tone brown */
+      }
+
+      .hero-section {
+        height: 90vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.384), rgba(0, 0, 0, 0.6)),
+          url("kenyan-food-african-delicious-cuisines-meals-2024-10-18-09-46-50-utc.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        color: white;
+      }
+
+      .menu-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none;
+        margin-bottom: 30px;
+      }
+
+      .menu-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .dish-img {
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .price-tag {
+        color: var(--primary-color);
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+
+      .about-img {
+        height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .social-icon {
+        font-size: 1.5rem;
+        margin: 0 15px;
+        transition: color 0.3s ease;
+      }
+
+      .social-icon:hover {
+        color: #d4af37;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      .btn-primary:hover {
+        background-color: #d86700;
+        border-color: #d86700;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Enhanced Navigation -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light fixed-top py-3"
+      style="
+        background: rgba(255, 255, 255, 0.966);
+        backdrop-filter: blur(10px);
+      "
+    >
+      <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="Screenshot 2025-02-06 1247392.png"
+            alt="Nyama Choma Haven Logo"
+            width="50"
+            height="50"
+            class="d-inline-block align-text-top me-2"
+          />
+          <span
+            class="brand-text"
+            style="font-family: 'Playfair Display', serif; font-size: 1.5rem"
+          >
+            BELLAVISTA
+            <small class="d-block" style="font-size: 0.8rem; color: #926f34"
+              >AUTHENTIC CUISINE</small
+            >
+          </span>
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav align-items-center">
+            <li class="nav-item mx-2">
+              <a class="nav-link hover-underline-animation" href="#home"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link hover-underline-animation" href="#menu"
+                >Our Menu</a
+              >
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link hover-underline-animation" href="#about"
+                >About Us</a
+              >
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link hover-underline-animation" href="#contact"
+                >Contact</a
+              >
+            </li>
+            <li class="nav-item ms-3">
+              <a
+                class="btn btn-outline-dark rounded-pill px-4"
+                href="#reservations"
+              >
+                Make a Reservation
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Add this CSS for enhanced styling -->
+    <style>
+      .navbar {
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand img {
+        transition: transform 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.1);
+      }
+
+      .hover-underline-animation {
+        position: relative;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .hover-underline-animation::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #926f34;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+      }
+
+      .hover-underline-animation:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+
+      .btn-outline-dark {
+        border: 2px solid #333;
+        transition: all 0.3s ease;
+      }
+
+      .btn-outline-dark:hover {
+        background-color: #926f34;
+        border-color: #926f34;
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-nav {
+          padding: 1rem 0;
+        }
+
+        .nav-item {
+          margin: 0.5rem 0;
+        }
+
+        .btn-outline-dark {
+          margin-top: 1rem;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="hero-section position-relative d-flex align-items-center"
+    >
+      <!-- Background Overlay -->
+      <div class="hero-overlay"></div>
+
+      <!-- Main Content -->
+      <div class="container position-relative">
+        <div class="row min-vh-100 align-items-center">
+          <div class="col-lg-8 mx-auto text-center text-white">
+            <span
+              class="text-uppercase letter-spacing-2 mb-3 d-block animated fadeIn"
+              >Welcome to Our Nyama Choma Haven</span
+            >
+            <h1 class="display-2 fw-bold mb-4 animated fadeInUp">
+              Authentic Kenyan Cuisine
+            </h1>
+            <p class="lead mb-5 fw-light animated fadeInUp delay-1">
+              Experience the rich flavors of traditional African dishes, crafted
+              with passion and served with pride
+            </p>
+            <div class="hero-buttons animated fadeInUp delay-2">
+              <a
+                href="#menu"
+                class="btn btn-primary btn-lg px-5 me-3 rounded-pill"
+                >View Our Menu</a
+              >
+              <a
+                href="#contact"
+                class="btn btn-outline-light btn-lg px-5 rounded-pill"
+                >Make a Reservation</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .hero-section {
+        background: url("kenyan-food-african-delicious-cuisines-meals-2024-10-18-09-46-50-utc.jpg")
+          no-repeat center center;
+        background-size: cover;
+        min-height: 100vh;
+        padding-top: 80px;
+        position: relative;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+      }
+
+      .letter-spacing-2 {
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+        color: #ffd700;
+      }
+
+      .btn-primary {
+        background-color: #926f34;
+        border-color: #926f34;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #785c2b;
+        border-color: #785c2b;
+        transform: translateY(-2px);
+      }
+
+      .btn-outline-light:hover {
+        transform: translateY(-2px);
+      }
+
+      /* Scroll Indicator Styles */
+      .scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .mouse {
+        width: 26px;
+        height: 40px;
+        border: 2px solid #fff;
+        border-radius: 20px;
+        position: relative;
+      }
+
+      .wheel {
+        width: 4px;
+        height: 8px;
+        background: #fff;
+        border-radius: 2px;
+        position: absolute;
+        top: 6px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: scroll 1.5s infinite;
+      }
+
+      /* Animations */
+      .animated {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+      }
+
+      .fadeIn {
+        animation-name: fadeIn;
+      }
+
+      .fadeInUp {
+        animation-name: fadeInUp;
+      }
+
+      .delay-1 {
+        animation-delay: 0.2s;
+      }
+
+      .delay-2 {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes scroll {
+        0% {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateX(-50%) translateY(15px);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translate3d(0, 40px, 0);
+        }
+        to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        .hero-section h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-buttons .btn {
+          display: block;
+          width: 100%;
+          margin: 1rem 0;
+        }
+      }
+    </style>
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="text-center mb-5">
+          <span class="section-subtitle">Our Delicacies</span>
+          <h2 class="section-title">Signature Dishes</h2>
+          <div class="divider"></div>
+        </div>
+
+        <!-- Menu Grid -->
+        <div class="row gy-4">
+          <!-- Nyama Choma -->
+          <div class="col-lg-4 col-md-6">
+            <div class="menu-card">
+              <div class="menu-image-container">
+                <img
+                  src="t-bone-steak-and-ugali.jpg"
+                  class="menu-image"
+                  alt="Premium Nyama Choma"
+                />
+                <span class="dish-badge">Chef's Special</span>
+              </div>
+              <div class="card-body">
+                <h3 class="dish-title">Premium Nyama Choma</h3>
+                <p class="dish-description">
+                  Perfectly grilled meat served with kachumbari, ugali, and
+                  traditional accompaniments
+                </p>
+                <div class="dish-tags">
+                  <span class="dish-tag">Grilled</span>
+                  <span class="dish-tag">Signature</span>
+                </div>
+                <span class="price">Ksh 1,500</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pilau -->
+          <div class="col-lg-4 col-md-6">
+            <div class="menu-card">
+              <div class="menu-image-container">
+                <img
+                  src="swahili-kenyan-pilau.jpg"
+                  class="menu-image"
+                  alt="Special Pilau"
+                />
+                <span class="dish-badge">Traditional</span>
+              </div>
+              <div class="card-body">
+                <h3 class="dish-title">Special Pilau</h3>
+                <p class="dish-description">
+                  Aromatic rice cooked with traditional Swahili spices, served
+                  with kachumbari and nyama
+                </p>
+                <div class="dish-tags">
+                  <span class="dish-tag">Swahili</span>
+                  <span class="dish-tag">Spiced</span>
+                </div>
+                <span class="price">Ksh 800</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tilapia -->
+          <div class="col-lg-4 col-md-6">
+            <div class="menu-card">
+              <div class="menu-image-container">
+                <img
+                  src="310752317_206769465027545_4032580809021164775_n.jpg"
+                  class="menu-image"
+                  alt="Lake Victoria Tilapia"
+                />
+                <span class="dish-badge">Fresh Catch</span>
+              </div>
+              <div class="card-body">
+                <h3 class="dish-title">Lake Victoria Tilapia</h3>
+                <p class="dish-description">
+                  Fresh tilapia prepared in traditional style with ugali and
+                  local vegetables
+                </p>
+                <div class="dish-tags">
+                  <span class="dish-tag">Seafood</span>
+                  <span class="dish-tag">Local</span>
+                </div>
+                <span class="price">Ksh 1,200</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .menu-section {
+        padding: 5rem 0;
+        background-color: #fff9f2;
+        position: relative;
+      }
+
+      .section-subtitle {
+        color: #926f34;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        color: #2c1810;
+        margin-bottom: 1rem;
+      }
+
+      .divider {
+        width: 80px;
+        height: 3px;
+        background: #926f34;
+        margin: 0 auto;
+      }
+
+      .menu-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+
+      .menu-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .menu-image-container {
+        position: relative;
+        padding-top: 75%;
+        overflow: hidden;
+      }
+
+      .menu-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .menu-card:hover .menu-image {
+        transform: scale(1.1);
+      }
+
+      .dish-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(146, 111, 52, 0.9);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 25px;
+        font-size: 0.85rem;
+      }
+
+      .card-body {
+        padding: 1.5rem;
+      }
+
+      .dish-title {
+        font-size: 1.25rem;
+        color: #2c1810;
+        margin-bottom: 0.75rem;
+      }
+
+      .dish-description {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .dish-tags {
+        margin-bottom: 1rem;
+      }
+
+      .dish-tag {
+        display: inline-block;
+        padding: 0.4rem 1rem;
+        margin-right: 0.5rem;
+        border-radius: 20px;
+        background: #f8f9fa;
+        color: #666;
+        font-size: 0.85rem;
+      }
+
+      .price {
+        display: block;
+        color: #926f34;
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+
+      @media (max-width: 768px) {
+        .menu-section {
+          padding: 3rem 0;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+      }
+    </style>
+
+    <!-- About Section -->
+    <section class="about-section py-5">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="row mb-5 text-center position-relative">
+          <div class="col-12">
+            <span class="badge custom-badge mb-3">Est. 2010</span>
+            <h2 class="display-4 fw-bold mb-3">Our Story</h2>
+            <div class="divider-container">
+              <div class="divider-line"></div>
+              <i class="fas fa-crown mx-3" style="color: #926f34"></i>
+              <div class="divider-line"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row align-items-center g-5">
+          <!-- Image Column -->
+          <div class="col-lg-6">
+            <div class="position-relative">
+              <!-- Decorative Border -->
+              <div class="decorative-border"></div>
+
+              <!-- Main Image -->
+              <div class="rounded-4 overflow-hidden shadow-lg image-container">
+                <img
+                  src="smiling-young-waiter-of-african-ethnicity-carrying-2023-11-27-05-16-20-utc.JPG"
+                  class="img-fluid"
+                  alt="Restaurant Interior"
+                />
+              </div>
+
+              <!-- Experience Card -->
+              <div
+                class="position-absolute bottom-0 end-0 bg-white p-4 rounded-3 shadow-lg experience-card"
+              >
+                <div class="text-center">
+                  <h3 class="fw-bold mb-0" style="color: #926f34">14+</h3>
+                  <p class="small text-uppercase mb-0">Years of Excellence</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="col-lg-6">
+            <div class="ps-lg-5 content-wrapper">
+              <!-- Lead Text -->
+              <p class="lead fw-bold mb-4 accent-text">
+                Bringing authentic Kenyan flavors since 2010
+              </p>
+
+              <!-- Main Text -->
+              <div class="content-box p-4">
+                <p class="mb-4">
+                  At Nyama Choma Haven, we celebrate the rich culinary heritage
+                  of Kenya. Our chefs use traditional cooking methods and
+                  locally-sourced ingredients to bring you the authentic taste
+                  of African cuisine. From our signature nyama choma to
+                  delicious coastal dishes, every meal tells a story of our
+                  culture.
+                </p>
+                <p class="mb-5">
+                  Located in the heart of Nairobi, we offer a warm, welcoming
+                  atmosphere where you can enjoy the best of Kenyan hospitality.
+                </p>
+              </div>
+
+              <!-- Features -->
+              <div class="row g-4 mt-4">
+                <div class="col-sm-6">
+                  <div class="feature-card p-3">
+                    <div class="d-flex align-items-center">
+                      <div class="icon-wrapper me-3">
+                        <i class="fas fa-utensils"></i>
+                      </div>
+                      <div>
+                        <h5 class="mb-1">Traditional Cooking</h5>
+                        <p class="small text-muted mb-0">Authentic Methods</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="feature-card p-3">
+                    <div class="d-flex align-items-center">
+                      <div class="icon-wrapper me-3">
+                        <i class="fas fa-leaf"></i>
+                      </div>
+                      <div>
+                        <h5 class="mb-1">Fresh Ingredients</h5>
+                        <p class="small text-muted mb-0">Locally Sourced</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .about-section {
+        background: linear-gradient(to right, #f8f7f4 0%, #ffffff 100%);
+        position: relative;
+        padding: 100px 0;
+      }
+
+      /* Header Styles */
+      .custom-badge {
+        background-color: #926f34;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        box-shadow: 0 4px 15px rgba(146, 111, 52, 0.2);
+      }
+
+      .divider-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 2rem 0;
+      }
+
+      .divider-line {
+        height: 2px;
+        width: 60px;
+        background-color: #926f34;
+      }
+
+      /* Image Section Styles */
+      .image-container {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .image-container img {
+        width: 100%;
+        transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+        transform-origin: center;
+      }
+
+      .image-container:hover img {
+        transform: scale(1.05);
+      }
+
+      .decorative-border {
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        right: 20px;
+        bottom: 20px;
+        border: 2px solid #926f34;
+        border-radius: 15px;
+        z-index: 0;
+      }
+
+      /* Experience Card Styles */
+      .experience-card {
+        position: absolute;
+        bottom: 40px;
+        right: -30px;
+        background: rgb(255, 255, 255);
+        padding: 25px 35px;
+        border-radius: 12px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        z-index: 2;
+        border: 1px solid rgba(146, 111, 52, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .experience-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .experience-card h3 {
+        font-size: 2.5rem;
+        color: #926f34;
+        font-weight: 700;
+        margin-bottom: 5px;
+        font-family: "Playfair Display", serif;
+      }
+
+      .experience-card p {
+        color: #666;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        margin: 0;
+      }
+
+      /* Content Section Styles */
+      .content-wrapper {
+        padding-left: 50px;
+      }
+
+      .accent-text {
+        color: #926f34;
+        font-size: 1.5rem;
+        font-family: "Playfair Display", serif;
+        line-height: 1.6;
+      }
+
+      .content-box {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(146, 111, 52, 0.1);
+        margin: 30px 0;
+      }
+
+      .content-box p {
+        color: #555;
+        line-height: 1.8;
+        font-size: 1.1rem;
+      }
+
+      /* Feature Cards Styles */
+      .feature-card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(146, 111, 52, 0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(146, 111, 52, 0.1);
+      }
+
+      .icon-wrapper {
+        width: 60px;
+        height: 60px;
+        background: rgb(194, 193, 193);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .feature-card:hover .icon-wrapper {
+        background: rgb(146, 112, 52);
+      }
+
+      .icon-wrapper i {
+        color: #926f34;
+        font-size: 1.4rem;
+        transition: all 0.3s ease;
+      }
+
+      .feature-card:hover .icon-wrapper i {
+        color: white;
+      }
+
+      .feature-card h5 {
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .feature-card p {
+        color: #666;
+        margin: 0;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 991.98px) {
+        .content-wrapper {
+          padding-left: 0;
+          margin-top: 80px;
+        }
+
+        .experience-card {
+          right: 20px;
+          bottom: -30px;
+        }
+
+        .decorative-border {
+          right: 0;
+          bottom: 0;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .about-section {
+          padding: 60px 0;
+        }
+
+        .experience-card {
+          padding: 20px;
+          right: 10px;
+          bottom: -20px;
+        }
+
+        .experience-card h3 {
+          font-size: 2rem;
+        }
+
+        .content-box {
+          padding: 20px;
+        }
+
+        .feature-card {
+          margin-bottom: 20px;
+        }
+      }
+
+      /* Additional Enhancements */
+      .display-4 {
+        font-family: "Playfair Display", serif;
+        color: #333;
+        font-weight: 700;
+      }
+
+      /* Smooth Scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Custom Selection Color */
+      ::selection {
+        background: rgba(146, 111, 52, 0.2);
+        color: #926f34;
+      }
+    </style>
+
+    <!-- Contact Section -->
+    <section id="contact" class="reservation-section py-5">
+      <div class="container">
+        <!-- Header -->
+        <div class="text-center mb-5">
+          <span class="badge bg-accent mb-2">Reservations</span>
+          <h2 class="display-4 fw-bold">Make a Reservation</h2>
+          <div class="divider-container">
+            <div class="divider-line"></div>
+            <i class="fas fa-utensils mx-3"></i>
+            <div class="divider-line"></div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="reservation-card">
+              <!-- Contact Info -->
+              <div class="contact-info text-center mb-4">
+                <p class="mb-2">
+                  <i class="fas fa-phone-alt me-2"></i> Call us: +254 123 456
+                  789
+                </p>
+                <p class="mb-0">
+                  <i class="far fa-clock me-2"></i> Open Hours: 12:00 PM - 11:00
+                  PM
+                </p>
+              </div>
+
+              <!-- Reservation Form -->
+              <form class="reservation-form">
+                <div class="row g-4">
+                  <!-- Personal Details -->
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        placeholder="Your Name"
+                        required
+                      />
+                      <label for="name"
+                        ><i class="fas fa-user me-2"></i>Full Name</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="Your Email"
+                        required
+                      />
+                      <label for="email"
+                        ><i class="fas fa-envelope me-2"></i>Email
+                        Address</label
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Reservation Details -->
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="date"
+                        required
+                      />
+                      <label for="date"
+                        ><i class="far fa-calendar-alt me-2"></i>Select
+                        Date</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <select class="form-select" id="time" required>
+                        <option value="">Select Time</option>
+                        <option>12:00 PM</option>
+                        <option>1:00 PM</option>
+                        <option>2:00 PM</option>
+                        <option>6:00 PM</option>
+                        <option>7:00 PM</option>
+                        <option>8:00 PM</option>
+                        <option>9:00 PM</option>
+                      </select>
+                      <label for="time"
+                        ><i class="far fa-clock me-2"></i>Select Time</label
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Additional Details -->
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <select class="form-select" id="guests" required>
+                        <option value="">Select Guests</option>
+                        <option>1 Person</option>
+                        <option>2 People</option>
+                        <option>3 People</option>
+                        <option>4 People</option>
+                        <option>5+ People</option>
+                      </select>
+                      <label for="guests"
+                        ><i class="fas fa-users me-2"></i>Number of
+                        Guests</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="phone"
+                        placeholder="Your Phone"
+                        required
+                      />
+                      <label for="phone"
+                        ><i class="fas fa-phone me-2"></i>Phone Number</label
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Special Requests -->
+                  <div class="col-12">
+                    <div class="form-floating">
+                      <textarea
+                        class="form-control"
+                        id="requests"
+                        style="height: 100px"
+                        placeholder="Special Requests"
+                      ></textarea>
+                      <label for="requests"
+                        ><i class="fas fa-concierge-bell me-2"></i>Special
+                        Requests</label
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-reserve w-100">
+                      <span>Reserve Your Table</span>
+                      <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .reservation-section {
+        background: linear-gradient(to right, #f8f7f4 0%, #ffffff 100%);
+        position: relative;
+        padding: 100px 0;
+      }
+
+      /* Header Styles */
+      .bg-accent {
+        background-color: #926f34;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        box-shadow: 0 4px 15px rgba(146, 111, 52, 0.2);
+      }
+
+      .divider-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 2rem 0;
+      }
+
+      .divider-line {
+        height: 2px;
+        width: 60px;
+        background-color: #926f34;
+      }
+
+      .fas.fa-utensils {
+        color: #926f34;
+      }
+
+      /* Reservation Card */
+      .reservation-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(146, 111, 52, 0.1);
+      }
+
+      /* Contact Info */
+      .contact-info {
+        color: #666;
+      }
+
+      .contact-info i {
+        color: #926f34;
+      }
+
+      /* Form Styles */
+      .form-floating {
+        margin-bottom: 0;
+      }
+
+      .form-control,
+      .form-select {
+        border: 1px solid rgba(146, 111, 52, 0.2);
+        border-radius: 10px;
+        padding: 1rem;
+        height: 58px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .form-control:focus,
+      .form-select:focus {
+        border-color: #926f34;
+        box-shadow: 0 0 0 0.2rem rgba(146, 111, 52, 0.15);
+      }
+
+      textarea.form-control {
+        height: auto;
+        resize: none;
+      }
+
+      .form-floating label {
+        padding-left: 1rem;
+        color: #666;
+      }
+
+      .form-floating label i {
+        color: #926f34;
+      }
+
+      /* Button Styles */
+      .btn-reserve {
+        background: #926f34;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        border: none;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-reserve:hover {
+        background: #7d5f2d;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(146, 111, 52, 0.2);
+      }
+
+      .btn-reserve i {
+        transition: transform 0.3s ease;
+      }
+
+      .btn-reserve:hover i {
+        transform: translateX(5px);
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .reservation-card {
+          padding: 25px;
+        }
+
+        .form-control,
+        .form-select {
+          height: 52px;
+        }
+      }
+
+      /* Animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .reservation-card {
+        animation: fadeIn 0.6s ease-out;
+      }
+    </style>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+      <div class="footer-top py-5">
+        <div class="container">
+          <div class="row g-4">
+            <!-- Logo & About -->
+            <div class="col-lg-4">
+              <div class="footer-brand mb-4">
+                <h3 class="logo-text">Bellavista</h3>
+                <div class="accent-line"></div>
+              </div>
+              <p class="footer-about">
+                Experience authentic Kenyan cuisine in the heart of Nairobi. Our
+                commitment to excellence makes every dining moment special.
+              </p>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-4">
+              <h5 class="footer-heading">Contact Us</h5>
+              <ul class="contact-list">
+                <li>
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>123 Restaurant Street, Nairobi, Kenya</span>
+                </li>
+                <li>
+                  <i class="fas fa-phone"></i>
+                  <span>+254 123 456 789</span>
+                </li>
+                <li>
+                  <i class="fas fa-envelope"></i>
+                  <span>info@nyamachomahaven.com</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Opening Hours -->
+            <div class="col-lg-4">
+              <h5 class="footer-heading">Opening Hours</h5>
+              <ul class="hours-list">
+                <li>
+                  <span class="day">Monday - Friday</span>
+                  <span class="time">12:00 PM - 11:00 PM</span>
+                </li>
+                <li>
+                  <span class="day">Saturday - Sunday</span>
+                  <span class="time">11:00 AM - 11:00 PM</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom py-4">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+              <p class="mb-md-0">
+                &copy; 2025 Bellavista. All rights reserved.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <div class="social-icons text-center text-md-end">
+                <a href="#" class="social-icon">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      .footer-section {
+        background: linear-gradient(to right, #1a1a1a, #2d2d2d);
+        color: #fff;
+        position: relative;
+      }
+
+      /* Footer Top Styles */
+      .footer-brand {
+        position: relative;
+      }
+
+      .logo-text {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, #926f34, #d4af37);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .accent-line {
+        width: 50px;
+        height: 2px;
+        background: #926f34;
+        margin-bottom: 20px;
+      }
+
+      .footer-about {
+        color: #999;
+        line-height: 1.8;
+        font-size: 0.95rem;
+      }
+
+      .footer-heading {
+        font-family: "Playfair Display", serif;
+        color: #fff;
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .footer-heading::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 30px;
+        height: 2px;
+        background: #926f34;
+      }
+
+      /* Contact List Styles */
+      .contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .contact-list li {
+        display: flex;
+        align-items: start;
+        margin-bottom: 1rem;
+        color: #999;
+      }
+
+      .contact-list i {
+        color: #926f34;
+        margin-right: 15px;
+        margin-top: 5px;
+      }
+
+      /* Hours List Styles */
+      .hours-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .hours-list li {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        color: #999;
+      }
+
+      .day {
+        color: #fff;
+      }
+
+      .time {
+        color: #926f34;
+      }
+
+      /* Footer Bottom Styles */
+      .footer-bottom {
+        background: rgba(0, 0, 0, 0.2);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer-bottom p {
+        color: #999;
+        margin: 0;
+      }
+
+      /* Social Icons Styles */
+      .social-icons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        justify-content: flex-end;
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(146, 111, 52, 0.1);
+        border-radius: 50%;
+        color: #926f34;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .social-icon:hover {
+        background: #926f34;
+        color: #fff;
+        transform: translateY(-3px);
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 991px) {
+        .footer-about {
+          margin-bottom: 2rem;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+
+        .footer-bottom p {
+          text-align: center;
+        }
+      }
+
+      /* Optional Animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .footer-section {
+        animation: fadeIn 0.6s ease-out;
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+  </body>
+</html>
