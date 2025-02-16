@@ -131,7 +131,7 @@ Your contributions make open source magical! Here's how to add your touch:
 </div>
 
 <div align="center">
- <img src="[https://avatars.githubusercontent.com/u/130851416?v=4](https://avatars.githubusercontent.com/u/160673325?v=4)" width="150px" style="border-radius: 50%; box-shadow: 0 0 20px rgba(0,0,0,0.15);" alt="Surge Brian Mutugi"/>
+ <img src="[https://avatars.githubusercontent.com/u/130851416?v=4](https://avatars.githubusercontent.com/u/160673325?v=4)](https://avatars.githubusercontent.com/u/160673325?v=4&size=64)" width="150px" style="border-radius: 50%; box-shadow: 0 0 20px rgba(0,0,0,0.15);" alt="Surge Brian Mutugi"/>
  
  <h3>Crafted with 💖 by <a href="https://github.com/daslime">Surge Brian Mutugi</a></h3>
  
