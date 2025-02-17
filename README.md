@@ -42,7 +42,6 @@ Welcome to my portfolio of dynamic landing pages, crafted during my journey at *
 - 🖼️ Immersive image gallery
 - 🔄 Butter-smooth navigation
 - 🎨 Modern UI/UX principles
-- 🌙 Dark mode support
 - 🚀 Optimized performance
 </details>
 
@@ -53,7 +52,7 @@ Welcome to my portfolio of dynamic landing pages, crafted during my journey at *
 <summary>View Features</summary>
 
 - 🌍 Interactive destination explorer
-- 💰 Dynamic pricing engine
+- 💰  pricing 
 - ⭐ Social proof integration
 - 📝 Streamlined booking flow
 - 📱 Mobile-first approach
@@ -122,13 +121,7 @@ Your contributions make open source magical! Here's how to add your touch:
 [![Project Views](https://komarev.com/ghpvc/?username=daslime&label=Profile%20views&color=0e75b6&style=flat)](https://github.com/daslime)
 
 </div>
-## 📄 License & Attribution
 
-<div align="center">
- 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
-</div>
 
 <div align="center">
   <img src="https://avatars.githubusercontent.com/u/160673325?v=4" width="150px" style="border-radius: 50%; box-shadow: 0 0 20px rgba(0,0,0,0.15);" alt="Surge Brian Mutugi"/>
@@ -138,7 +131,7 @@ Your contributions make open source magical! Here's how to add your touch:
  [![GitHub](https://img.shields.io/github/followers/daslime?label=Follow&style=social)](https://github.com/daslime)
  [![Twitter](https://img.shields.io/twitter/follow/surgecoder?style=social)](https://twitter.com/surgecoder)
  
- <sub>Released under the [MIT License](LICENSE)</sub>
+
  
  <br/>
  
